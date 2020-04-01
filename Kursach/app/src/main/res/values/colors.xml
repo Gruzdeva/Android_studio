@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    <color name="colorPrimary">#3F51B5</color>-->
+<!--    <color name="colorPrimaryDark">#303F9F</color>-->
+<!--    <color name="colorAccent">#FF4081</color>-->
+<!--    <color name="dark_blue">#3023AE</color>-->
+<!--    <color name="purple">#c86dd7</color>-->
+
+    <color name="colorPrimary">#FFDAB9</color>
+    <color name="colorPrimaryDark">#FFDAB9</color>
+    <color name="colorAccent">#BC8F8F</color>
+    <color name="dark_blue">#FFB6C1</color>
+    <color name="purple">#4169E1</color>
+
+    <color name="login_from_details">#483D8B</color>
+    <color name="login_from_details_light">#6495ED	</color>
+    <color name="login_form_details_medium">#FFDAB9</color>
+
+
+
+</resources>
