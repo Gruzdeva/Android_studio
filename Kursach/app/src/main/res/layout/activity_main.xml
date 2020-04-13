@@ -53,6 +53,7 @@
 
     <TextView
         android:id="@+id/forgot_password"
+        android:onClick="forgot_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -78,6 +79,7 @@
 
     <TextView
         android:id="@+id/textView"
+        android:onClick="registration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Don't have an account"
