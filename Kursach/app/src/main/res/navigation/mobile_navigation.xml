@@ -3,41 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_account">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.app2.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home">
-
-        <action
-            android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
-            app:destination="@id/nav_home_second" />
+        android:id="@+id/nav_menu"
+        android:name="com.example.app2.ui.menu.MenuFragment"
+        android:label="Menu"
+        tools:layout="@layout/fragment_menu">
     </fragment>
     <fragment
-        android:id="@+id/nav_home_second"
-        android:name="com.example.app2.ui.home.HomeSecondFragment"
-        android:label="@string/home_second"
-        tools:layout="@layout/fragment_home_second">
-        <action
-            android:id="@+id/action_HomeSecondFragment_to_HomeFragment"
-            app:destination="@id/nav_home" />
-
-        <argument
-            android:name="myArg"
-            app:argType="string" />
+        android:id="@+id/nav_account"
+        android:name="com.example.app2.ui.account.AccountFragment"
+        android:label="Account"
+        tools:layout="@layout/fragment_account">
     </fragment>
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.app2.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_order"
+        android:name="com.example.app2.ui.order.OrderFragment"
+        android:label="Order"
+        tools:layout="@layout/fragment_order" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.app2.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_cart"
+        android:name="com.example.app2.ui.cart.CartFragment"
+        android:label="Cart"
+        tools:layout="@layout/fragment_cart" />
 </navigation>

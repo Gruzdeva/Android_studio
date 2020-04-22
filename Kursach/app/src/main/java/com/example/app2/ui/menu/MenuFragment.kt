@@ -1,4 +1,4 @@
-package com.example.app2.ui.gallery
+package com.example.app2.ui.menu
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,21 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.app2.R
 
-class GalleryFragment : Fragment() {
 
-    private lateinit var galleryViewModel: GalleryViewModel
+class MenuFragment: Fragment() {
+
+    private lateinit var menuViewModel: MenuViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        galleryViewModel =
-            ViewModelProviders.of(this).get(GalleryViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_gallery, container, false)
-        val textView: TextView = root.findViewById(R.id.text_gallery)
-        galleryViewModel.text.observe(viewLifecycleOwner, Observer {
+        menuViewModel =
+            ViewModelProviders.of(this).get(MenuViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_menu, container, false)
+        val textView: TextView = root.findViewById(R.id.text_menu)
+        menuViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

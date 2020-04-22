@@ -19,5 +19,9 @@ class MainActivity : AppCompatActivity() {
     fun forgot_password(view: View) {
         startActivity(Intent(this, ForgotPasswordActivity::class.java))
     }
+
+    fun go_to_app(view: View) {
+        startActivity(Intent(this, Menu::class.java))
+    }
 }
 

@@ -42,6 +42,7 @@
         android:layout_height="40dp"
         android:background="@drawable/btn_bg"
         android:text="Login Now"
+        android:onClick="go_to_app"
         android:textAllCaps="false"
         android:textColor="@color/login_form_details_medium"
         android:textColorHint="@color/login_from_details"

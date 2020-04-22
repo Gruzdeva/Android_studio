@@ -1,4 +1,4 @@
-package com.example.app2.ui.slideshow
+package com.example.app2.ui.cart
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.app2.R
 
-class SlideshowFragment : Fragment() {
 
-    private lateinit var slideshowViewModel: SlideshowViewModel
+class CartFragment: Fragment() {
+    private lateinit var cartViewModel: CartViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        slideshowViewModel =
-            ViewModelProviders.of(this).get(SlideshowViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_slideshow, container, false)
-        val textView: TextView = root.findViewById(R.id.text_slideshow)
-        slideshowViewModel.text.observe(viewLifecycleOwner, Observer {
+        cartViewModel =
+            ViewModelProviders.of(this).get(CartViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_cart, container, false)
+        val textView: TextView = root.findViewById(R.id.text_cart)
+        cartViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

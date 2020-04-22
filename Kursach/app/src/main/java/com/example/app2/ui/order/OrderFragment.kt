@@ -1,4 +1,4 @@
-package com.example.app2.ui.home
+package com.example.app2.ui.order
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.app2.R
 
-class HomeFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+class OrderFragment: Fragment() {
+    private lateinit var orderViewModel: OrderViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
+        orderViewModel =
+            ViewModelProviders.of(this).get(OrderViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_order, container, false)
+        val textView: TextView = root.findViewById(R.id.text_order)
+        orderViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
