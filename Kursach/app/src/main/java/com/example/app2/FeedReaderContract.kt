@@ -3,9 +3,12 @@ package com.example.app2
 import android.provider.BaseColumns
 
 object FeedReaderContract {
-    object FeedEntry: BaseColumns{
+    object UserTable: BaseColumns{
         const val TABLE_NAME = "Users"
-        const val COLUmN_NAME_LOGIN = "login"
-        const val COLUmN_NAME_PASSWORD = "password"
+        const val COLUMN_ID = "user_id"
+        const val COLUMN_LOGIN = "login"
+        const val COLUMN_NAME = "name"
+        const val COLUMN_PASSWORD = "password"
+        const val COLUMN_POINTS = "points"
     }
 }
