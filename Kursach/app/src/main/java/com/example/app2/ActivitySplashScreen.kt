@@ -4,21 +4,30 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 
-class SplashScreen: AppCompatActivity() {
+class ActivitySplashScreen: AppCompatActivity() {
     private var flag: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
+
+        val tableUsers = TableUsers(this)
     }
 
     override fun onResume() {
         super.onResume()
 
+        val tableUsers = TableUsers(this)
         if(!flag){
             Thread(Runnable {
                 Thread.sleep(2000)
-                startActivity(Intent(this, MainActivity::class.java))
+
+                //add later
+//                if(tableUsers.checkRemember()) {
+//                    tableUsers.loadRemember()
+//                    startActivity(Intent(this, Menu::class.java))
+//                } else
+                    startActivity(Intent(this, ActivityAuthorization::class.java))
                 finish()
             }).start()
         }

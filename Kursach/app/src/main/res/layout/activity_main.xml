@@ -5,25 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_login"
-    tools:context=".MainActivity">
+    tools:context=".ActivityAuthorization">
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/login_auth"
         android:layout_width="221dp"
         android:layout_height="50dp"
         android:background="@drawable/et_bg"
-        android:hint="Email address"
+        android:hint="Login"
         android:inputType="textPassword"
         android:padding="16dp"
         android:textColorHint="@color/login_from_details"
-        app:layout_constraintBottom_toTopOf="@+id/username"
+        app:layout_constraintBottom_toTopOf="@+id/password_auth"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.952" />
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/password_auth"
         android:layout_width="221dp"
         android:layout_height="50dp"
         android:layout_marginBottom="404dp"
@@ -42,14 +42,14 @@
         android:layout_height="40dp"
         android:background="@drawable/btn_bg"
         android:text="Login Now"
-        android:onClick="go_to_app"
+        android:onClick="login_now"
         android:textAllCaps="false"
         android:textColor="@color/login_form_details_medium"
         android:textColorHint="@color/login_from_details"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username"
+        app:layout_constraintTop_toBottomOf="@+id/password_auth"
         app:layout_constraintVertical_bias="0.084" />
 
     <TextView
@@ -79,7 +79,7 @@
         app:layout_constraintVertical_bias="0.62" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/registration"
         android:onClick="registration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
         app:layout_constraintVertical_bias="0.36" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/facebook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign in with Facebook"
@@ -125,7 +125,7 @@
         android:textColor="@color/login_from_details"
         android:textSize="16sp"
 
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintBottom_toTopOf="@+id/facebook"
         app:layout_constraintEnd_toStartOf="@+id/Line1"
         app:layout_constraintStart_toEndOf="@+id/Line2"
         app:layout_constraintTop_toBottomOf="@+id/forgot_password" />
