@@ -2,8 +2,7 @@ package com.example.app2
 
 import android.content.ContentValues
 import android.content.Context
-import android.database.sqlite.SQLiteDatabase
-import android.database.sqlite.SQLiteStatement
+import android.util.Log
 import com.example.app2.DBReader.UserTable
 
 class TableUsers(context: Context) {
@@ -37,6 +36,9 @@ class TableUsers(context: Context) {
             put(UserTable.COLUMN_REMEMBER, 1)
         }
         db.update(UserTable.TABLE_NAME, cv, UserTable.COLUMN_ID + "=" + userProfile.id.toString(),null)
+
+//        cursor.close()
+//        db.close()
     }
 
     fun signUp(){
@@ -67,7 +69,10 @@ class TableUsers(context: Context) {
     }
 
     fun logOut(){// add later
-
+        val cv = ContentValues().apply {
+            put(UserTable.COLUMN_REMEMBER, 0)
+        }
+        db.update(UserTable.TABLE_NAME, cv, UserTable.COLUMN_ID + "=" + userProfile.id.toString(),null)
     }
 
     fun checkLogin(login: String): Boolean {
@@ -75,15 +80,7 @@ class TableUsers(context: Context) {
                 "WHERE ${UserTable.COLUMN_LOGIN} = ? ", arrayOf(login))
         cursor.moveToFirst()
 
-        if (cursor.count == 0){
-//            cursor.close()
-//            db.close()
-            return false
-        } else {
-//            cursor.close()
-//            db.close()
-            return true
-        }
+        return cursor.count != 0
     }
 
     fun checkProfile(login: String, password: String): Boolean {
@@ -92,15 +89,7 @@ class TableUsers(context: Context) {
                 "${UserTable.COLUMN_PASSWORD} = ? ", arrayOf(login, password))
         cursor.moveToFirst()
 
-        if (cursor.count == 0){
-//            cursor.close()
-//            db.close()
-            return false
-        } else {
-//            cursor.close()
-//            db.close()
-            return true
-        }
+        return cursor.count != 0
     }
 
     fun checkRemember(): Boolean {
@@ -108,15 +97,7 @@ class TableUsers(context: Context) {
                 "WHERE ${UserTable.COLUMN_REMEMBER} = ? ", arrayOf("1"))
         cursor.moveToFirst()
 
-        if (cursor.count == 0){
-//            cursor.close()
-//            db.close()
-            return false
-        } else {
-//            cursor.close()
-//            db.close()
-            return true
-        }
+        return cursor.count != 0
     }
 
     fun loadRemember(){
@@ -132,6 +113,41 @@ class TableUsers(context: Context) {
 
 //        cursor.close()
 //        db.close()
+    }
+
+    fun checkForgot(login: String, name: String): Boolean{ //maybe need modify
+        val cursor = db.rawQuery("SELECT * FROM ${UserTable.TABLE_NAME} " +
+                "WHERE ${UserTable.COLUMN_LOGIN} = ? AND " +
+                "${UserTable.COLUMN_NAME} = ? ", arrayOf(login, name))
+        cursor.moveToFirst()
+
+        return cursor.count != 0
+    }
+
+    fun getPass(login: String, name: String): String{
+        val cursor = db.rawQuery("SELECT ${UserTable.COLUMN_PASSWORD} FROM ${UserTable.TABLE_NAME} " +
+                "WHERE ${UserTable.COLUMN_LOGIN} = ? AND " +
+                "${UserTable.COLUMN_NAME} = ? ", arrayOf(login, name))
+        cursor.moveToFirst()
+
+        return cursor.getString(0)
+    }
+
+    fun deleteFromTable(){// delete later!
+        val cursor = db.rawQuery("DELETE FROM ${UserTable.TABLE_NAME}", null)
+        cursor.moveToFirst()
+    }
+
+    fun tableInfo(){
+        val cursor = db.rawQuery("SELECT * FROM ${UserTable.TABLE_NAME}", null)
+        cursor.moveToFirst()
+
+        while(cursor.moveToNext()){
+            Log.d("TABLEINFO", "${cursor.getInt(indexId)} " +
+                    "${cursor.getString(indexLogin)} ${cursor.getString(indexName)} " +
+                    "${cursor.getString(indexPassword)} ${cursor.getInt(indexPoints)} " +
+                    "${cursor.getString(indexRemember)}" )
+        }
     }
 
     fun close(){

@@ -92,11 +92,13 @@
         app:layout_constraintTop_toBottomOf="@+id/footer_line"
         app:layout_constraintVertical_bias="0.36" />
 
+<!-- need to delete -->
     <TextView
         android:id="@+id/facebook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign in with Facebook"
+        android:onClick="proverka"
         android:textColor="@color/login_from_details"
         app:layout_constraintBottom_toTopOf="@+id/footer_line"
         app:layout_constraintEnd_toEndOf="parent"
@@ -117,14 +119,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.693" />
 
+<!-- delete? -->
     <TextView
         android:id="@+id/or"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="or"
+        android:onClick="delete"
         android:textColor="@color/login_from_details"
         android:textSize="16sp"
-
         app:layout_constraintBottom_toTopOf="@+id/facebook"
         app:layout_constraintEnd_toStartOf="@+id/Line1"
         app:layout_constraintStart_toEndOf="@+id/Line2"

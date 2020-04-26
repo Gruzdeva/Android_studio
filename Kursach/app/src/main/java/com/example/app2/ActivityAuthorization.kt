@@ -1,7 +1,6 @@
 package com.example.app2
 
 import android.content.Intent
-import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
@@ -42,11 +41,28 @@ class ActivityAuthorization : AppCompatActivity() {
             userProfile.password = password
 
             tableUsers.signIn()
-            //tableUsers.close()
+            tableUsers.close()
 
             startActivity(Intent(this, Menu::class.java))
         }
 
+    }
+
+    fun delete(view: View) {
+        val tableUsers = TableUsers(this)
+        tableUsers.deleteFromTable()
+
+        val toast = Toast.makeText(this, "DELETE", Toast.LENGTH_SHORT)
+        toast.show()
+    }
+
+    fun proverka(view: View) {
+        val tableUsers = TableUsers(this)
+        tableUsers.tableInfo()
+        tableUsers.close()
+
+        val toast = Toast.makeText(this, "CHECK", Toast.LENGTH_SHORT)
+        toast.show()
     }
 }
 

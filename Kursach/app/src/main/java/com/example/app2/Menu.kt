@@ -1,7 +1,11 @@
 package com.example.app2
 
+import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
+import android.widget.TextView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
@@ -46,11 +50,25 @@ class Menu : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu, menu)
+
+//        need to fix
+        val userProfile = UserProfile.getInstance()
+        val name: TextView = findViewById(R.id.name_of_account)
+        name.text = userProfile.name
+
         return true
     }
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    fun log_out(view: View) {
+        val tableUsers = TableUsers(this)
+
+        tableUsers.logOut()
+
+        startActivity(Intent(this, ActivityAuthorization::class.java))
     }
 }
