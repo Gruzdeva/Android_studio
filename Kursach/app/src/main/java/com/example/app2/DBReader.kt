@@ -20,4 +20,14 @@ object DBReader {
         const val COLUMN_NUMBER = "order_number"
         const val COLUMN_COST = "cost"
     }
+
+    object MenuTable: BaseColumns {
+        const val TABLE_NAME = "Menu"
+        const val COLUMN_ID = "food_id"
+        const val COLUMN_GROUP_ID = "id_group"
+        const val COLUMN_NAME = "name"
+        const val COLUMN_DESCRIPTION = "description"
+        const val COLUMN_PRICE = "price"
+    }
+
 }
