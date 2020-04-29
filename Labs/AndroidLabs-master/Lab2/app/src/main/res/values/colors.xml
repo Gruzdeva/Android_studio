@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="brownDark">#46290A</color>
+    <color name="brown">#D6AB6A</color>
+    <color name="brownLight">#FAD596</color>
+    <color name="brownPressed">#81654A</color>
+    <color name="brownLightPressed">#AD8D58</color>
+    <color name="backgroundRecyclerItem">#917053</color>
+    <color name="cyan">#00BCD4</color>
+    <color name="blackTint">#12000000</color>
+</resources>
