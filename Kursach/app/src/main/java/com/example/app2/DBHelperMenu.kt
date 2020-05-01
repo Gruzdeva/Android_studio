@@ -3,9 +3,9 @@ package com.example.app2
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import java.io.File
-import java.io.FileOutputStream
-import java.io.IOException
+import android.util.Log
+import java.io.*
+import java.sql.SQLException
 
 
 class DBHelperMenu(context: Context): SQLiteOpenHelper(context, DB_NAME, null, DB_VERSION) {
@@ -17,45 +17,42 @@ class DBHelperMenu(context: Context): SQLiteOpenHelper(context, DB_NAME, null, D
     }
 
     init{
-        if (android.os.Build.VERSION.SDK_INT >= 17)
-            DB_PATH = context.applicationInfo.dataDir + "/databases/"
-        else
-            DB_PATH = "/data/data/" + context.packageName + "/databases/"
-
-        createDatabase()
+        DB_PATH =context.getFilesDir().getPath() + DB_NAME
     }
 
-    fun checkDB(): Boolean{
-        val dbFile = File(DB_PATH + DB_NAME)
-        return dbFile.exists()
-    }
+    fun create_db(){
+        var myInput: InputStream? = null
+        var myOutput: OutputStream? = null
+        try {
+            val file = File(DB_PATH)
+            if (!file.exists()) {
+                this.readableDatabase
+                //получаем локальную бд как поток
+                myInput = context.getAssets().open(DB_NAME)
+                // Путь к новой бд
+                val outFileName = DB_PATH
 
-    fun createDatabase(){
-        if(!checkDB()) {
-            this.readableDatabase
-            this.close()
+                // Открываем пустую бд
+                myOutput = FileOutputStream(outFileName)
 
-            try {
-                copyDBFile()
-            } catch(e: IOException){
-                throw Error("ErrorCopyingDataBase")
+                // побайтово копируем данные
+                val buffer = ByteArray(1024)
+                var length: Int = 0
+                while (myInput.read(buffer).also({ length = it }) > 0) {
+                    myOutput.write(buffer, 0, length)
+                }
+                myOutput.flush()
+                myOutput.close()
+                myInput.close()
             }
+        } catch (ex: IOException) {
+            Log.d("DatabaseHelper", ex.message)
         }
     }
 
-    @Throws(IOException::class)
-    private fun copyDBFile() {
-        val input = context.getAssets().open(DB_NAME)
-        val output= FileOutputStream(DB_PATH + DB_NAME)
-        val buffer = ByteArray(1024)
-        var length: Int
-
-        while (input.read(buffer).also { length = it } > 0)
-            output.write(buffer, 0, length)
-
-        output.flush()
-        output.close()
-        input.close()
+    @Throws(SQLException::class)
+    fun open(): SQLiteDatabase? {
+        return SQLiteDatabase.openDatabase(DB_PATH, null, SQLiteDatabase.OPEN_READWRITE)
     }
 
     override fun onCreate(db: SQLiteDatabase?) {

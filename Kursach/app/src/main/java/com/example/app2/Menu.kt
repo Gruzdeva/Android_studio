@@ -1,6 +1,6 @@
 package com.example.app2
 
-import android.app.Dialog
+
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -50,12 +50,6 @@ class Menu : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu, menu)
-
-//        need to fix
-        val userProfile = UserProfile.getInstance()
-        val name: TextView = findViewById(R.id.name_of_account)
-        name.text = userProfile.name
-
         return true
     }
 
