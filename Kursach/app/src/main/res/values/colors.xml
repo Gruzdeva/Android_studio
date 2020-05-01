@@ -11,4 +11,10 @@
     <color name="login_from_details_light">#E1C64C</color>
     <color name="login_form_details_medium">#ACB60F33</color>
 
+    <color name="bg_account_start">#649d66</color>
+    <color name="bg_account_center">#f6d743</color>
+    <color name="bg_account_end">#f6f578</color>
+
+
+
 </resources>
