@@ -16,17 +16,16 @@
         android:inputType="textEmailAddress"
         android:padding="16dp"
         android:textColorHint="@color/login_from_details"
-        app:layout_constraintBottom_toTopOf="@+id/password_auth"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.879" />
+        app:layout_constraintVertical_bias="0.151" />
 
     <EditText
         android:id="@+id/password_auth"
         android:layout_width="221dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="384dp"
         android:background="@drawable/et_bg"
         android:hint="Password"
         android:inputType="textPassword"
@@ -34,7 +33,13 @@
         android:textColorHint="@color/login_from_details"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.283" />
+
+    <!-- need to delete -->
+
+    <!-- delete? -->
 
     <Button
         android:id="@+id/btn_login"
@@ -49,8 +54,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_auth"
-        app:layout_constraintVertical_bias="0.113" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.474" />
 
     <TextView
         android:id="@+id/forgot_password"
@@ -62,10 +67,9 @@
         android:textColor="@color/login_from_details"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.576" />
 
     <View
         android:id="@+id/footer_line"
@@ -76,26 +80,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/forgot_password"
-        app:layout_constraintVertical_bias="0.62" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.852" />
 
     <TextView
         android:id="@+id/registration"
-        android:onClick="registration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="registration"
         android:text="Don't have an account"
         android:textColor="@color/login_from_details"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/footer_line"
-        app:layout_constraintVertical_bias="0.36" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.952" />
 
-<!-- need to delete -->
-
-    <!-- delete? -->
     <TextView
         android:id="@+id/facebook"
         android:layout_width="wrap_content"
@@ -103,12 +103,12 @@
         android:onClick="proverka"
         android:text="Sign in with Facebook"
         android:textColor="@color/login_from_details"
-        app:layout_constraintBottom_toTopOf="@+id/footer_line"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/forgot_password"
-        app:layout_constraintVertical_bias="0.745" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.807" />
 
     <View
         android:id="@+id/Line1"
@@ -120,20 +120,22 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.69" />
+        app:layout_constraintVertical_bias="0.701" />
 
     <TextView
         android:id="@+id/or"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="or"
         android:onClick="delete"
+        android:text="or"
         android:textColor="@color/login_from_details"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/facebook"
-        app:layout_constraintEnd_toStartOf="@+id/Line1"
-        app:layout_constraintStart_toEndOf="@+id/Line2"
-        app:layout_constraintTop_toBottomOf="@+id/forgot_password" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.709" />
 
     <View
         android:id="@+id/Line2"
@@ -145,7 +147,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.691" />
+        app:layout_constraintVertical_bias="0.7" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
