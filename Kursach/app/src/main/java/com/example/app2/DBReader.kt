@@ -30,4 +30,9 @@ object DBReader {
         const val COLUMN_PRICE = "price"
     }
 
+    object MenuSingleton{
+        const val FOOD_NAME = "food_names"
+        const val FOOD_DESCRIPTION = "food_descriptions"
+        const val FOOD_PRICE = ""
+    }
 }

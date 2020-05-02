@@ -11,7 +11,7 @@
 
     <TextView
         android:id="@+id/name_recycler"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="name of food"
         android:textSize="20dp"
@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="300dp"
+        android:layout_marginLeft="350dp"
         android:text="Price"
         android:textSize="20dp" />
 

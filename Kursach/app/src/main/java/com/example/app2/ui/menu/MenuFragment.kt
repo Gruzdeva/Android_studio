@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app2.AdapterRecycler
@@ -20,20 +19,15 @@ class MenuFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-//        menuViewModel =
-//            ViewModelProviders.of(this).get(MenuViewModel::class.java)
+
         val root = inflater.inflate(R.layout.fragment_menu, container, false)
-//        val textView: TextView = root.findViewById(R.id.text_menu)
-//        menuViewModel.text.observe(viewLifecycleOwner, Observer {
-//            textView.text = it
-//        })
+        val myRecycler = root.findViewById<RecyclerView>(R.id.myRecycler)
 
-        val myRecycler = activity!!.findViewById<RecyclerView>(R.id.myRecycler)
+        myRecycler.layoutManager = LinearLayoutManager(activity)
+        myRecycler.setHasFixedSize(true)
 
-//        myRecycler.layoutManager = LinearLayoutManager(activity)
-//        myRecycler.setHasFixedSize(true)
-//
-//        myRecycler.adapter = AdapterRecycler(activity!!.applicationContext)
+        myRecycler.adapter =
+            AdapterRecycler(activity!!.applicationContext)
         return root
     }
 }
