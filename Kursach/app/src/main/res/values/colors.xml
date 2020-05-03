@@ -11,10 +11,16 @@
     <color name="login_from_details_light">#E1C64C</color>
     <color name="login_form_details_medium">#ACB60F33</color>
 
-    <color name="bg_account_start">#649d66</color>
-    <color name="bg_account_center">#f6d743</color>
-    <color name="bg_account_end">#f6f578</color>
+    <color name="bg_account_start">#64C568</color>
+    <color name="bg_account_center">#f6f578</color>
+    <color name="bg_account_end">#F4D129</color>
 
+    <color name="forgot_text">#052C4E</color>
+    <color name="forgot_radius">#5B298769</color>
+    <color name="forgot_btn">#D8CB06</color>
+
+    <color name="btn_forg">#873DB9F3</color>
+    <color name="btn_forg2">#784FF17D</color>
 
 
 </resources>
