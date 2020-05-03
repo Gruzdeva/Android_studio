@@ -21,10 +21,21 @@
         android:id="@+id/price_recycler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
+        android:layout_alignParentTop="true"
         android:layout_marginLeft="350dp"
         android:text="Price"
         android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/add_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/price_recycler"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="-3dp"
+        android:onClick="add_to_db"
+        android:text="ADD" />
 
 
 </RelativeLayout>

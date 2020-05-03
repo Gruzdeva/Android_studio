@@ -8,24 +8,33 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.app2.AdapterCartRecycler
 import com.example.app2.R
+import com.example.app2.TableUserOrder
 
 
 class CartFragment: Fragment() {
-    private lateinit var cartViewModel: CartViewModel
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        cartViewModel =
-            ViewModelProviders.of(this).get(CartViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_cart, container, false)
-        val textView: TextView = root.findViewById(R.id.text_cart)
-        cartViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+        val cartRecycler = root.findViewById<RecyclerView>(R.id.myCartRecycler)
+        val cost = root.findViewById<TextView>(R.id.cart_cost)
+        val tableUserOrder = TableUserOrder(activity!!.applicationContext)
+
+        cartRecycler.layoutManager = LinearLayoutManager(activity)
+        cartRecycler.setHasFixedSize(true)
+
+        cartRecycler.adapter =
+            AdapterCartRecycler(activity!!.applicationContext)
+
+        cost.text = "COST: ${tableUserOrder.order_cost()}"
         return root
     }
 }

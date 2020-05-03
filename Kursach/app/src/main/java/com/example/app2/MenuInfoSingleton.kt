@@ -13,11 +13,11 @@ class MenuInfoSingleton {
         fun getInstance(): MenuInfoSingleton{
             if(instance == null){
                 instance = MenuInfoSingleton()
-                instance.id = arrayOfNulls(100)
-                instance.group_id = arrayOfNulls(100)
-                instance.name = arrayOfNulls(100)
-                instance.description = arrayOfNulls(100)
-                instance.price = arrayOfNulls(100)
+//                instance.id = arrayOfNulls(100)
+//                instance.group_id = arrayOfNulls(100)
+//                instance.name = arrayOfNulls(100)
+//                instance.description = arrayOfNulls(100)
+//                instance.price = arrayOfNulls(100)
             }
             return instance
         }

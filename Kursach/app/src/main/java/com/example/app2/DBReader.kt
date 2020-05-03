@@ -21,6 +21,13 @@ object DBReader {
         const val COLUMN_COST = "cost"
     }
 
+    object UserOrderTable: BaseColumns{
+        const val TABLE_NAME = "User_order"
+        const val COLUMN_ID = "id"
+        const val COLUMN_NAME = "name"
+        const val COLUMN_PRICE = "price"
+    }
+
     object MenuTable: BaseColumns {
         const val TABLE_NAME = "Menu"
         const val COLUMN_ID = "food_id"
@@ -33,6 +40,6 @@ object DBReader {
     object MenuSingleton{
         const val FOOD_NAME = "food_names"
         const val FOOD_DESCRIPTION = "food_descriptions"
-        const val FOOD_PRICE = ""
+        const val FOOD_PRICE = "price"
     }
 }

@@ -9,24 +9,23 @@
         android:id="@+id/nav_menu"
         android:name="com.example.app2.ui.menu.MenuFragment"
         android:label="Menu"
-        tools:layout="@layout/fragment_menu">
-    </fragment>
+        tools:layout="@layout/fragment_menu"/>
+
     <fragment
         android:id="@+id/nav_account"
         android:name="com.example.app2.ui.account.AccountFragment"
         android:label="Account"
-        tools:layout="@layout/fragment_account">
-    </fragment>
-
-    <fragment
-        android:id="@+id/nav_order"
-        android:name="com.example.app2.ui.order.OrderFragment"
-        android:label="Order"
-        tools:layout="@layout/fragment_order" />
+        tools:layout="@layout/fragment_account"/>
 
     <fragment
         android:id="@+id/nav_cart"
         android:name="com.example.app2.ui.cart.CartFragment"
         android:label="Cart"
+        tools:layout="@layout/fragment_orders" />
+
+    <fragment
+        android:id="@+id/nav_orders"
+        android:name="com.example.app2.ui.order.OrderFragment"
+        android:label="Orders"
         tools:layout="@layout/fragment_cart" />
 </navigation>

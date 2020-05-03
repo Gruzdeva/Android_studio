@@ -40,7 +40,7 @@ class Menu : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_menu, R.id.nav_order, R.id.nav_cart, R.id.nav_account
+                R.id.nav_menu, R.id.nav_orders, R.id.nav_cart, R.id.nav_account
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -64,5 +64,24 @@ class Menu : AppCompatActivity() {
         tableUsers.logOut()
 
         startActivity(Intent(this, ActivityAuthorization::class.java))
+    }
+
+    fun add_to_db(view: View) {
+        val tableUserOrder = TableUserOrder(this)
+
+        val nameText: TextView = findViewById(R.id.name_recycler)
+        val priceText: TextView = findViewById(R.id.price_recycler)
+
+        val name = nameText.text.toString()
+        val price = priceText.text.toString().toInt()
+
+        tableUserOrder.add_position(name, price)
+    }
+
+    fun pay_for_order(view: View) {
+        val tableUserOrder = TableUserOrder(this)
+        tableUserOrder.delete_db_data()
+
+        // подумать над переходом в аккаунт
     }
 }

@@ -38,7 +38,6 @@ class AdapterRecycler(context: Context): RecyclerView.Adapter<AdapterRecycler.my
         cursor.moveToFirst()
 
         size = cursor.getInt(0)
-        Log.d("PROVERKA", size.toString())
 
         cursor = db.rawQuery("SELECT * FROM ${MenuTable.TABLE_NAME}", null)
         cursor.moveToFirst()
@@ -64,17 +63,17 @@ class AdapterRecycler(context: Context): RecyclerView.Adapter<AdapterRecycler.my
 
         fun bind(cursor: Cursor){
             var i = 0
-            var menuInfoSingleton = MenuInfoSingleton.getInstance()
+            var menuInfoSingleton: MenuInfoSingleton = MenuInfoSingleton.getInstance()
 
             if(!cursor.isAfterLast){
                 nameView.text = cursor.getString(2)
                 priceView.text = cursor.getInt(4).toString()
 
-                menuInfoSingleton.id[i] = cursor.getInt(0)
-                menuInfoSingleton.group_id[i] = cursor.getInt(1)
-                menuInfoSingleton.name[i] = cursor.getString(2)
-                menuInfoSingleton.description[i] = cursor.getString(3)
-                menuInfoSingleton.price[i] = cursor.getInt(4)
+                menuInfoSingleton.id[i] = cursor.getInt(0).toInt()
+                menuInfoSingleton.group_id[i] = cursor.getInt(1).toInt()
+                menuInfoSingleton.name[i] = cursor.getString(2).toString()
+                menuInfoSingleton.description[i] = cursor.getString(3).toString()
+                menuInfoSingleton.price[i] = cursor.getInt(4).toInt()
                 i++
 
                 cursor.moveToNext()
