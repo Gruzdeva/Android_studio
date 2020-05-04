@@ -1,4 +1,4 @@
-package com.example.app2
+package com.example.app2.ui.menu
 
 import android.content.Context
 import com.example.app2.DBReader.MenuTable

@@ -1,12 +1,9 @@
-package com.example.app2
+package com.example.app2.ui.menu
 
 import android.os.Bundle
-import android.util.Log
-import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
+import com.example.app2.R
 
 
 class ActivityPagerMenu: AppCompatActivity() {
@@ -16,7 +13,11 @@ class ActivityPagerMenu: AppCompatActivity() {
         setContentView(R.layout.activity_pager_menu)
 
         val intent = intent
-        val menuFragAdapter = MenuFragAdapter(supportFragmentManager, this, 42)
+        val menuFragAdapter = MenuFragAdapter(
+            supportFragmentManager,
+            this,
+            42
+        )
         val viewPager = findViewById<ViewPager>(R.id.viewPager)
 
         viewPager.adapter = menuFragAdapter

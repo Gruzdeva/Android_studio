@@ -1,4 +1,4 @@
-package com.example.app2
+package com.example.app2.ui.menu
 
 class MenuInfoSingleton {
     var id: Array<Int?> = arrayOfNulls(100)
@@ -10,9 +10,10 @@ class MenuInfoSingleton {
     companion object{
         private var instance = MenuInfoSingleton()
 
-        fun getInstance(): MenuInfoSingleton{
+        fun getInstance(): MenuInfoSingleton {
             if(instance == null){
-                instance = MenuInfoSingleton()
+                instance =
+                    MenuInfoSingleton()
 //                instance.id = arrayOfNulls(100)
 //                instance.group_id = arrayOfNulls(100)
 //                instance.name = arrayOfNulls(100)

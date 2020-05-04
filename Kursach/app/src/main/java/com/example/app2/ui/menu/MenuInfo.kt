@@ -1,4 +1,4 @@
-package com.example.app2
+package com.example.app2.ui.menu
 
 class MenuInfo {
     var id = 0
@@ -8,17 +8,20 @@ class MenuInfo {
     var price = 0
 
     companion object {
-        private  var instance: MenuInfo = MenuInfo()
+        private  var instance: MenuInfo =
+            MenuInfo()
 
-        fun getInstance(): MenuInfo{
+        fun getInstance(): MenuInfo {
             if (instance == null) { //если объект еще не создан
-                instance = MenuInfo() //создать новый объект
+                instance =
+                    MenuInfo() //создать новый объект
             }
             return instance// вернуть ранее созданный объект
         }
 
         fun getNewObject(): MenuInfo {
-            instance = MenuInfo()
+            instance =
+                MenuInfo()
             return instance
         }
     }

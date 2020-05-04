@@ -1,8 +1,7 @@
-package com.example.app2
+package com.example.app2.ui.menu
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
@@ -11,7 +10,8 @@ import com.example.app2.DBReader.MenuSingleton
 class MenuFragAdapter(fm: FragmentManager, context: Context, size: Int)
     : FragmentPagerAdapter(fm){
     val size = size
-    private val menuInfoSingleton: MenuInfoSingleton = MenuInfoSingleton.getInstance()
+    private val menuInfoSingleton: MenuInfoSingleton =
+        MenuInfoSingleton.getInstance()
 
     override fun getItem(position: Int): Fragment {
         val arguments = Bundle()

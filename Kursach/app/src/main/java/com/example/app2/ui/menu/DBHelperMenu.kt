@@ -1,4 +1,4 @@
-package com.example.app2
+package com.example.app2.ui.menu
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
@@ -11,7 +11,10 @@ import java.io.OutputStream
 import java.sql.SQLException
 
 
-class DBHelperMenu(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_VERSION) {
+class DBHelperMenu(context: Context) : SQLiteOpenHelper(context,
+    DB_NAME, null,
+    DB_VERSION
+) {
     private var mDataBase: SQLiteDatabase? = null
     private val mContext: Context
     private var mNeedUpdate = false

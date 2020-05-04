@@ -9,7 +9,7 @@ class DBHelperUsers(context: Context): SQLiteOpenHelper(context, DB_NAME, null, 
     val context = context
     companion object{
         val DB_NAME = "Test.db"
-        val DB_VERSION = 1
+        val DB_VERSION = 2
     }
 
     override fun onCreate(db: SQLiteDatabase?) =

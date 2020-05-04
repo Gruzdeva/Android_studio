@@ -40,7 +40,7 @@ class ActivityAuthorization : AppCompatActivity() {
             userProfile.login = login
             userProfile.password = password
 
-            tableUsers.signIn()
+            tableUsers.signIn(login, password)
             tableUsers.close()
 
             startActivity(Intent(this, Menu::class.java))

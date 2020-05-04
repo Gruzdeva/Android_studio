@@ -1,17 +1,17 @@
-package com.example.app2
+package com.example.app2.ui.menu
 
 import android.content.Context
 import android.content.Intent
 import android.database.Cursor
 import android.database.SQLException
 import android.database.sqlite.SQLiteDatabase
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app2.DBReader.MenuTable
+import com.example.app2.R
 import java.io.IOException
 
 class AdapterRecycler(context: Context): RecyclerView.Adapter<AdapterRecycler.myVHolder>() {
@@ -63,7 +63,8 @@ class AdapterRecycler(context: Context): RecyclerView.Adapter<AdapterRecycler.my
 
         fun bind(cursor: Cursor){
             var i = 0
-            var menuInfoSingleton: MenuInfoSingleton = MenuInfoSingleton.getInstance()
+            var menuInfoSingleton: MenuInfoSingleton =
+                MenuInfoSingleton.getInstance()
 
             if(!cursor.isAfterLast){
                 nameView.text = cursor.getString(2)
@@ -86,7 +87,7 @@ class AdapterRecycler(context: Context): RecyclerView.Adapter<AdapterRecycler.my
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myVHolder {
         val context = parent.context
         val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate(R.layout.recycler_item, parent, false)
+        val view = inflater.inflate(R.layout.recycler_menu_item, parent, false)
 
         return myVHolder(view)
     }

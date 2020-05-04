@@ -1,4 +1,4 @@
-package com.example.app2
+package com.example.app2.ui.cart
 
 import android.content.ContentValues
 import android.content.Context

@@ -1,4 +1,4 @@
-package com.example.app2
+package com.example.app2.ui.cart
 
 import android.content.Context
 import android.database.Cursor
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app2.DBReader.UserOrderTable
+import com.example.app2.R
 
 class AdapterCartRecycler(context: Context): RecyclerView.Adapter<AdapterCartRecycler.VHolder>(){
     val dbHelper = DBHelperUserOrder(context)
@@ -43,7 +44,7 @@ class AdapterCartRecycler(context: Context): RecyclerView.Adapter<AdapterCartRec
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VHolder {
         val context = parent.context
         val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate(R.layout.cart_recycler_item, parent, false)
+        val view = inflater.inflate(R.layout.recycler_cart_item, parent, false)
 
         return VHolder(view)
     }

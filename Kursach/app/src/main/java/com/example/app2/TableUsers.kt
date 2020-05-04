@@ -21,11 +21,11 @@ class TableUsers(context: Context) {
 
     private var userProfile = UserProfile.getInstance()
 
-    fun signIn(){
+    fun signIn(login: String, password: String){
         val cursor = db.rawQuery("SELECT * FROM ${UserTable.TABLE_NAME} " +
                 "WHERE ${UserTable.COLUMN_LOGIN} = ? AND " +
                 "${UserTable.COLUMN_PASSWORD} = ? ",
-            arrayOf(userProfile.login, userProfile.password))
+            arrayOf(login, password))
         cursor.moveToFirst()
 
         userProfile.id = cursor.getInt(indexId)
@@ -142,12 +142,25 @@ class TableUsers(context: Context) {
         val cursor = db.rawQuery("SELECT * FROM ${UserTable.TABLE_NAME}", null)
         cursor.moveToFirst()
 
-        while(cursor.moveToNext()){
+        while(!cursor.isAfterLast){
             Log.d("TABLEINFO", "${cursor.getInt(indexId)} " +
                     "${cursor.getString(indexLogin)} ${cursor.getString(indexName)} " +
                     "${cursor.getString(indexPassword)} ${cursor.getInt(indexPoints)} " +
                     "${cursor.getString(indexRemember)}" )
+
+            cursor.moveToNext()
         }
+
+        userProfile = UserProfile.getNewObject()
+    }
+
+    fun updatePoints(points: Int){
+        val cv = ContentValues().apply {
+            put(UserTable.COLUMN_POINTS, points)
+        }
+
+        db.update(UserTable.TABLE_NAME, cv, UserTable.COLUMN_ID + "=" + userProfile.id.toString(),null)
+
     }
 
     fun close(){

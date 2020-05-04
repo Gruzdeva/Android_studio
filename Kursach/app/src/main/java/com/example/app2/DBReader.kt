@@ -13,7 +13,7 @@ object DBReader {
         const val COLUMN_REMEMBER = "remember"
     }
 
-    object OrderTable: BaseColumns{
+    object OrdersTable: BaseColumns{
         const val TABLE_NAME = "Orders"
         const val COLUMN_ID = "order_id"
         const val COLUMN_USER_ID = "user_id"

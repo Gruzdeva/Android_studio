@@ -6,13 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.app2.AdapterCartRecycler
 import com.example.app2.R
-import com.example.app2.TableUserOrder
 
 
 class CartFragment: Fragment() {
@@ -26,7 +22,8 @@ class CartFragment: Fragment() {
         val root = inflater.inflate(R.layout.fragment_cart, container, false)
         val cartRecycler = root.findViewById<RecyclerView>(R.id.myCartRecycler)
         val cost = root.findViewById<TextView>(R.id.cart_cost)
-        val tableUserOrder = TableUserOrder(activity!!.applicationContext)
+        val tableUserOrder =
+            TableUserOrder(activity!!.applicationContext)
 
         cartRecycler.layoutManager = LinearLayoutManager(activity)
         cartRecycler.setHasFixedSize(true)

@@ -3,6 +3,7 @@ package com.example.app2
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.View
 import android.widget.TextView
@@ -17,6 +18,9 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.example.app2.ui.cart.TableUserOrder
+import com.example.app2.ui.order.DBHelperAllOrders
+import com.example.app2.ui.order.TableOrders
 
 class Menu : AppCompatActivity() {
 
@@ -40,7 +44,10 @@ class Menu : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_menu, R.id.nav_orders, R.id.nav_cart, R.id.nav_account
+                R.id.nav_menu,
+                R.id.nav_orders,
+                R.id.nav_cart,
+                R.id.nav_account
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -80,8 +87,13 @@ class Menu : AppCompatActivity() {
 
     fun pay_for_order(view: View) {
         val tableUserOrder = TableUserOrder(this)
-        tableUserOrder.delete_db_data()
+        val tableOrders = TableOrders(this)
+        val userProfile = UserProfile.getInstance()
 
+        val cost = tableUserOrder.order_cost()
+        tableUserOrder.delete_db_data()
+        tableOrders.addNewOrder(cost)
+        userProfile.points = (userProfile.points + cost * 0.05).toInt()
         // подумать над переходом в аккаунт
     }
 }
