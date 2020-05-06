@@ -131,7 +131,7 @@
         android:onClick="delete"
         android:text="or"
         android:textColor="@color/login_from_details2"
-        android:textSize="16sp"
+        android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
