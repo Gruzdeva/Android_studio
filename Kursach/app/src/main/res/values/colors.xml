@@ -3,7 +3,7 @@
 
     <color name="colorPrimary">#FFDAB9</color>
     <color name="colorPrimaryDark">#FFDAB9</color>
-    <color name="colorAccent">#BC8F8F</color>
+    <color name="colorAccent">#A4881EB5</color>
     <color name="dark_blue">#E65464</color>
     <color name="purple">#ffe75e</color>
 
@@ -16,7 +16,7 @@
     <color name="bg_account_center">#f6f578</color>
     <color name="bg_account_end">#F4D129</color>
 
-    <color name="forgot_password">#9EFFE500</color>
+    <color name="forgot_password">#B86F34</color>
     <color name="input_text">#8C3030</color>
     <color name="forgot_btn">#D8CB06</color>
 
