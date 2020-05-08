@@ -47,7 +47,7 @@
         android:id="@+id/btn_login"
         android:layout_width="221dp"
         android:layout_height="40dp"
-        android:background="@drawable/btn_bg"
+        android:background="@drawable/btn_bg_press"
         android:onClick="login_now"
         android:text="Login Now"
         android:textAllCaps="false"

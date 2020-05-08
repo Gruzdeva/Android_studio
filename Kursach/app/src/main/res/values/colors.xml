@@ -15,6 +15,7 @@
     <color name="bg_account_start">#64C568</color>
     <color name="bg_account_center">#f6f578</color>
     <color name="bg_account_end">#F4D129</color>
+    <color name="bg_btn">#55D36445</color>
 
     <color name="forgot_password">#B86F34</color>
     <color name="input_text">#8C3030</color>

@@ -63,7 +63,7 @@
     <Button
         android:layout_width="221dp"
         android:layout_height="42dp"
-        android:background="@drawable/btn_bg"
+        android:background="@drawable/btn_bg_press"
         android:onClick="createAccount"
         android:text="Create account"
         android:textColor="@color/login_form_details_medium"
