@@ -1,6 +1,7 @@
 package com.example.app2.ui.account
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,8 +36,9 @@ class AccountFragment: Fragment() {
         val name: TextView = root.findViewById(R.id.name_of_account)
         val points: TextView = root.findViewById(R.id.points_acc)
 
+        Log.d("PROVERKAACC", userProfile.name)
         name.text = userProfile.name
-        points.text = "Points: ${userProfile.points.toString()}"
+        points.text = "Points: ${userProfile.points}"
         tableUsers.updatePoints(userProfile.points)
         return root
     }

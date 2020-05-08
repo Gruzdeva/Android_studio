@@ -19,6 +19,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.app2.ui.cart.TableUserOrder
+import com.example.app2.ui.menu.TableMenu
 import com.example.app2.ui.order.DBHelperAllOrders
 import com.example.app2.ui.order.TableOrders
 
@@ -31,6 +32,9 @@ class Menu : AppCompatActivity() {
         setContentView(R.layout.activity_menu)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+
+        val tableMenu = TableMenu(this)
+        tableMenu.loadFromDB()
 
         val fab: FloatingActionButton = findViewById(R.id.fab)
         fab.setOnClickListener { view ->
@@ -70,19 +74,7 @@ class Menu : AppCompatActivity() {
 
         tableUsers.logOut()
 
-        startActivity(Intent(this, ActivityAuthorization::class.java))
-    }
-
-    fun add_to_db(view: View) {
-        val tableUserOrder = TableUserOrder(this)
-
-        val nameText: TextView = findViewById(R.id.name_recycler)
-        val priceText: TextView = findViewById(R.id.price_recycler)
-
-        val name = nameText.text.toString()
-        val price = priceText.text.toString().toInt()
-
-        tableUserOrder.add_position(name, price)
+        startActivity(Intent(this, ActivityAuthorization::class.java))// finish add
     }
 
     fun pay_for_order(view: View) {
@@ -91,6 +83,7 @@ class Menu : AppCompatActivity() {
         val userProfile = UserProfile.getInstance()
 
         val cost = tableUserOrder.order_cost()
+        tableUserOrder.tableInfo()
         tableUserOrder.delete_db_data()
         tableOrders.addNewOrder(cost)
         userProfile.points = (userProfile.points + cost * 0.05).toInt()

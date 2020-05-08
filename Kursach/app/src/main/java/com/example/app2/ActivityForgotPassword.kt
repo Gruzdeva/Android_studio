@@ -19,7 +19,8 @@ class ActivityForgotPassword: AppCompatActivity() {
 
         val loginText: EditText = findViewById(R.id.login_forgot)
         val nameText: EditText = findViewById(R.id.name_forgot)
-        val passView: TextView = findViewById(R.id.your_pass)
+        val yourPassView: TextView = findViewById(R.id.your_pass)
+        val passwordView: TextView = findViewById(R.id.passwrd_forgot_pass)
 
         val login = loginText.text.toString()
         val name = nameText.text.toString()
@@ -30,7 +31,8 @@ class ActivityForgotPassword: AppCompatActivity() {
             toast.show()
         } else {
             val pass = tableUsers.getPass(login, name)
-            passView.text = "Your password: $pass"
+            yourPassView.text = "Your password:"
+            passwordView.text = pass
         }
     }
 }

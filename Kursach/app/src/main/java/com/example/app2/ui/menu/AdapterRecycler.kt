@@ -1,85 +1,41 @@
 package com.example.app2.ui.menu
 
 import android.content.Context
-import android.content.Intent
-import android.database.Cursor
-import android.database.SQLException
-import android.database.sqlite.SQLiteDatabase
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.app2.DBReader.MenuTable
 import com.example.app2.R
-import java.io.IOException
+import com.example.app2.ui.cart.TableUserOrder
 
-class AdapterRecycler(context: Context): RecyclerView.Adapter<AdapterRecycler.myVHolder>() {
-    var dbHelper = DBHelperMenu(context)
-    var db: SQLiteDatabase
-    var cursor: Cursor
 
-    var size: Int
-
-    init {
-        try {
-            dbHelper.updateDataBase()
-        } catch (mIOException: IOException) {
-            throw Error("UnableToUpdateDatabase")
-        }
-
-        try {
-            db = dbHelper.writableDatabase
-        } catch (mSQLException: SQLException) {
-            throw mSQLException
-        }
-
-        cursor = db.rawQuery("SELECT COUNT(*) FROM ${MenuTable.TABLE_NAME}", null)
-        cursor.moveToFirst()
-
-        size = cursor.getInt(0)
-
-        cursor = db.rawQuery("SELECT * FROM ${MenuTable.TABLE_NAME}", null)
-        cursor.moveToFirst()
-
-    }
+class AdapterRecycler(context: Context, size: Int): RecyclerView.Adapter<AdapterRecycler.myVHolder>() {
+    val menuSingleton = MenuSingleton.getInstance()!!
+    val size = size
 
     class myVHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val context = itemView.context
 
         val nameView: TextView = itemView.findViewById(R.id.name_recycler)
+        val descriptionView: TextView = itemView.findViewById(R.id.description_menu)
         val priceView: TextView = itemView.findViewById(R.id.price_recycler)
-//        val imageView: ImageView = itemView.findViewById(R.id.picture_recycler)
+        val addBtn: Button = itemView.findViewById(R.id.add_btn)
 
-        init {
-            super.itemView
-            itemView.setOnClickListener(View.OnClickListener {
+        fun bind(position: Int, singleton: MenuSingleton){
+            nameView.text = singleton.name[position]
+            priceView.text = singleton.price[position].toString()
+            descriptionView.text = singleton.description[position]
 
-                val intent = Intent(context, ActivityPagerMenu::class.java)
-                intent.putExtra("position", adapterPosition)
-                context.startActivity(intent)
-            })
-        }
+            addBtn.setOnClickListener{
+                val tableUserOrder = TableUserOrder(context)
 
-        fun bind(cursor: Cursor){
-            var i = 0
-            var menuInfoSingleton: MenuInfoSingleton =
-                MenuInfoSingleton.getInstance()
+                val name = nameView.text.toString()
+                val price = priceView.text.toString().toInt()
 
-            if(!cursor.isAfterLast){
-                nameView.text = cursor.getString(2)
-                priceView.text = cursor.getInt(4).toString()
-
-                menuInfoSingleton.id[i] = cursor.getInt(0).toInt()
-                menuInfoSingleton.group_id[i] = cursor.getInt(1).toInt()
-                menuInfoSingleton.name[i] = cursor.getString(2).toString()
-                menuInfoSingleton.description[i] = cursor.getString(3).toString()
-                menuInfoSingleton.price[i] = cursor.getInt(4).toInt()
-                i++
-
-                cursor.moveToNext()
-            } else {
-                cursor.close()
+                tableUserOrder.add_position(name, price)
             }
         }
     }
@@ -97,6 +53,6 @@ class AdapterRecycler(context: Context): RecyclerView.Adapter<AdapterRecycler.my
     }
 
     override fun onBindViewHolder(holder: myVHolder, position: Int) {
-        holder.bind(cursor)
+        holder.bind(position, menuSingleton)
     }
 }

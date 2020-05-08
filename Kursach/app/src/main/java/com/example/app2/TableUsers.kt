@@ -35,7 +35,7 @@ class TableUsers(context: Context) {
         val cv = ContentValues().apply {
             put(UserTable.COLUMN_REMEMBER, 1)
         }
-        db.update(UserTable.TABLE_NAME, cv, UserTable.COLUMN_ID + "=" + userProfile.id.toString(),null)
+        db.update(UserTable.TABLE_NAME, cv, UserTable.COLUMN_ID + "=" + cursor.getInt(indexId).toString(),null)
 
 //        cursor.close()
 //        db.close()
@@ -150,8 +150,6 @@ class TableUsers(context: Context) {
 
             cursor.moveToNext()
         }
-
-        userProfile = UserProfile.getNewObject()
     }
 
     fun updatePoints(points: Int){

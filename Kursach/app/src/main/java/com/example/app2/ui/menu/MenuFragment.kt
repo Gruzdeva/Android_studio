@@ -25,7 +25,7 @@ class MenuFragment: Fragment() {
         myRecycler.setHasFixedSize(true)
 
         myRecycler.adapter =
-            AdapterRecycler(activity!!.applicationContext)
+            AdapterRecycler(activity!!.applicationContext, 42)
         return root
     }
 }
