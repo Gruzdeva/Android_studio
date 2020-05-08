@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <gradient
-        android:startColor="@color/bg_account_start"
-        android:centerColor="@color/bg_account_center"
-        android:endColor="@color/bg_account_end"
-        android:angle="135"></gradient>
+    <stroke android:color="@color/btn_food" android:width="3dp"/>
+    <corners android:radius="1dp"/>
+
 </shape>
