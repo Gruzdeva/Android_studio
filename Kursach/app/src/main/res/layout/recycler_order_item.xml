@@ -2,22 +2,30 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="1000dp"
+    android:background="@drawable/recycler">
 
 <!--Может стоит добавить символическую картинку, для красочности-->
 
     <TextView
         android:id="@+id/number_order"
+        android:layout_width="40dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="7dp"
         android:text="number"
-        android:layout_margin="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:textColor="@color/account"
+        android:textSize="50dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/cost_order"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
         android:text="cost"
-        android:layout_margin="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:textColor="@color/account"
+        android:textSize="50dp"
+        android:textStyle="bold" />
 
 </LinearLayout>
