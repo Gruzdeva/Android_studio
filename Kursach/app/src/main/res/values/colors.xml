@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#FFDAB9</color>
+    <color name="colorPrimary">#F9000000</color>
     <color name="colorPrimaryDark">#FFDAB9</color>
     <color name="colorAccent">#A4881EB5</color>
     <color name="dark_blue">#E65464</color>
@@ -25,7 +25,9 @@
     <color name="btn_forg2">#784FF17D</color>
 
     <color name="text_food">#FFFFFF</color>
+    <color name="account">#050303</color>
     <color name="btn_food">#93792B</color>
+    <color name="btn_account">#BBFFFF8F</color>
 
 
 </resources>
