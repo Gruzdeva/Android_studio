@@ -12,37 +12,17 @@ import com.example.app2.R
 import com.example.app2.UserProfile
 import com.example.app2.DBReader.OrdersTable
 
-class AdapterOrderRecycler(context: Context): RecyclerView.Adapter<AdapterOrderRecycler.VHolder>() {
-    var dbHelper = DBHelperAllOrders(context)
-    var db = dbHelper.writableDatabase
-    var cursor: Cursor
-    var size: Int
-    val userProfile = UserProfile.getInstance()
-
-    init {
-        cursor = db.rawQuery("SELECT COUNT(*) FROM ${OrdersTable.TABLE_NAME} " +
-                "WHERE ${OrdersTable.COLUMN_USER_ID} = ?", arrayOf(userProfile.id.toString()))
-        cursor.moveToFirst()
-        size = cursor.getInt(0)
-        Log.d("PROVERKAR", size.toString())
-        cursor = db.rawQuery("SELECT * FROM ${OrdersTable.TABLE_NAME} " +
-                "WHERE ${OrdersTable.COLUMN_USER_ID} = ?", arrayOf(userProfile.id.toString()))
-        cursor.moveToFirst()
-    }
+class AdapterOrderRecycler(context: Context, size: Int): RecyclerView.Adapter<AdapterOrderRecycler.VHolder>() {
+    val orderSingleton = OrderSingleton.getInstance()!!
+    var size = size
 
     class VHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val number: TextView = itemView.findViewById(R.id.number_order)
         val cost: TextView = itemView.findViewById(R.id.cost_order)
 
-        fun bind(cursor: Cursor){
-            if(!cursor.isAfterLast){
-                number.text = cursor.getString(2)
-                cost.text = cursor.getInt(3).toString()
-
-                cursor.moveToNext()
-            } else {
-                cursor.close()
-            }
+        fun bind(singleton: OrderSingleton, position: Int){
+            number.text = singleton.numbers[position].toString()
+            cost.text = singleton.costs[position].toString()
         }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterOrderRecycler.VHolder {
@@ -58,7 +38,7 @@ class AdapterOrderRecycler(context: Context): RecyclerView.Adapter<AdapterOrderR
     }
 
     override fun onBindViewHolder(holder: AdapterOrderRecycler.VHolder, position: Int) {
-        holder.bind(cursor)
+        holder.bind(orderSingleton, position)
     }
 
 }

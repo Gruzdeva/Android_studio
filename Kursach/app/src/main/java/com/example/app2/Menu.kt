@@ -90,7 +90,7 @@ class Menu : AppCompatActivity() {
 
         Log.d("COST", userProfile.points.toString())
 
-        tableUserOrder.tableInfo()
+        //tableUserOrder.tableInfo()
         tableUserOrder.delete_db_data()
         tableOrders.addNewOrder(cost)
 

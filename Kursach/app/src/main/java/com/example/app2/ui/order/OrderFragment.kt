@@ -23,10 +23,14 @@ class OrderFragment: Fragment() {
         val root = inflater.inflate(R.layout.fragment_orders, container, false)
         val myRecylcer = root.findViewById<RecyclerView>(R.id.myOrdersRecycler)
 
+        val tableOrders = TableOrders(activity!!.applicationContext)
+        tableOrders.load_in_singleton()
+        val size = tableOrders.itemCount()
+
         myRecylcer.layoutManager = LinearLayoutManager(activity)
         myRecylcer.setHasFixedSize(true)
 
-        myRecylcer.adapter = AdapterOrderRecycler(activity!!.applicationContext)
+        myRecylcer.adapter = AdapterOrderRecycler(activity!!.applicationContext, size)
         return root
     }
 }
