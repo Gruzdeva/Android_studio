@@ -7,6 +7,7 @@ import android.view.Gravity
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
+import com.example.app2.ui.order.TableOrders
 
 class ActivityAuthorization : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +25,7 @@ class ActivityAuthorization : AppCompatActivity() {
 
     fun login_now(view: View) {
         val tableUsers = TableUsers(this)
-        val userProfile = UserProfile.getNewObject()
+        var userProfile = UserProfile.getNewObject()
 
         val loginText: EditText = findViewById(R.id.login_auth)
         val passwordText: EditText = findViewById(R.id.password_auth)
@@ -40,7 +41,7 @@ class ActivityAuthorization : AppCompatActivity() {
             userProfile.login = login
             userProfile.password = password
 
-            tableUsers.signIn()
+            tableUsers.signIn(login, password)
             tableUsers.close()
 
             startActivity(Intent(this, Menu::class.java))
@@ -50,7 +51,9 @@ class ActivityAuthorization : AppCompatActivity() {
 
     fun delete(view: View) {
         val tableUsers = TableUsers(this)
+        val tableOrders = TableOrders(this)
         tableUsers.deleteFromTable()
+        tableOrders.deleteFromDB()
 
         val toast = Toast.makeText(this, "DELETE", Toast.LENGTH_SHORT)
         toast.show()

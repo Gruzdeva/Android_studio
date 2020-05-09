@@ -24,7 +24,7 @@ class CartFragment: Fragment() {
         val cost = root.findViewById<TextView>(R.id.cart_cost)
         val tableUserOrder =
             TableUserOrder(activity!!.applicationContext)
-
+        tableUserOrder.updateTableData()
         cartRecycler.layoutManager = LinearLayoutManager(activity)
         cartRecycler.setHasFixedSize(true)
 

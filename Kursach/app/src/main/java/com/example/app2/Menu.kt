@@ -80,14 +80,19 @@ class Menu : AppCompatActivity() {
 
     fun pay_for_order(view: View) {
         val tableUserOrder = TableUserOrder(this)
+        val tableUsers = TableUsers(this)
         val tableOrders = TableOrders(this)
-        val userProfile = UserProfile.getInstance()
+        var userProfile = UserProfile.getInstance()
 
         val cost = tableUserOrder.order_cost()
+        userProfile.points = (userProfile.points + cost * 0.05).toInt()
+        tableUsers.updatePoints(userProfile.points)
+
+        Log.d("COST", userProfile.points.toString())
+
         tableUserOrder.tableInfo()
         tableUserOrder.delete_db_data()
         tableOrders.addNewOrder(cost)
-        userProfile.points = (userProfile.points + cost * 0.05).toInt()
-        // подумать над переходом в аккаунт
+
     }
 }

@@ -21,11 +21,11 @@ class TableUsers(context: Context) {
 
     private var userProfile = UserProfile.getInstance()
 
-    fun signIn(){
+    fun signIn(login: String, password: String){
         cursor = db.rawQuery("SELECT * FROM ${UserTable.TABLE_NAME} " +
                 "WHERE ${UserTable.COLUMN_LOGIN} = ? AND " +
                 "${UserTable.COLUMN_PASSWORD} = ? ",
-            arrayOf(userProfile.login, userProfile.password))
+            arrayOf(login, password))
         cursor.moveToFirst()
 
         userProfile.id = cursor.getInt(indexId)

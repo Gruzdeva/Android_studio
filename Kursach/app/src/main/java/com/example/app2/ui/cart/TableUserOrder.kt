@@ -29,7 +29,7 @@ class TableUserOrder(context: Context) {
         cursor = db.rawQuery("SELECT SUM(${UserOrderTable.COLUMN_PRICE}) " +
                 "FROM ${UserOrderTable.TABLE_NAME}", null)
         cursor.moveToFirst()
-
+        Log.d("COST", cursor.getInt(0).toString())
         return cursor.getInt(0)
     }
 
@@ -47,30 +47,33 @@ class TableUserOrder(context: Context) {
                 "WHERE ${UserOrderTable.COLUMN_ID} = ?", arrayOf(position.toString()))
         cursor.moveToFirst()
 
-//        cursor = db.rawQuery("SELECT * FROM ${UserOrderTable.TABLE_NAME}", null)
-//        cursor.moveToFirst()
-//        val size = cursor.count
-//        var names: ArrayList<String> = arrayListOf()
-//        var prices: ArrayList<Int> = arrayListOf()
-//
-//
-//        while (!cursor.isAfterLast){
-//            names.add(cursor.getString(indexName))
-//            prices.add(cursor.getInt(indexPrice))
-//
-//            cursor.moveToNext()
-//        }
-//
-//        delete_db_data()
-//
-//        for (x in 0..size - 1){
-//            val cv = ContentValues().apply {
-//                put(UserOrderTable.COLUMN_NAME, names[x])
-//                put(UserOrderTable.COLUMN_PRICE, prices[x])
-//            }
-//
-//            db.insert(UserOrderTable.TABLE_NAME, null, cv)
-//        }
+    }
+
+    fun updateTableData(){
+        cursor = db.rawQuery("SELECT * FROM ${UserOrderTable.TABLE_NAME}", null)
+        cursor.moveToFirst()
+        val size = cursor.count
+        var names: ArrayList<String> = arrayListOf()
+        var prices: ArrayList<Int> = arrayListOf()
+
+
+        while (!cursor.isAfterLast){
+            names.add(cursor.getString(indexName))
+            prices.add(cursor.getInt(indexPrice))
+
+            cursor.moveToNext()
+        }
+
+        delete_db_data()
+
+        for (x in 0..size - 1){
+            val cv = ContentValues().apply {
+                put(UserOrderTable.COLUMN_NAME, names[x])
+                put(UserOrderTable.COLUMN_PRICE, prices[x])
+            }
+
+            db.insert(UserOrderTable.TABLE_NAME, null, cv)
+        }
     }
 
     fun tableInfo(){
