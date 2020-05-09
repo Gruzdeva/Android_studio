@@ -36,7 +36,12 @@ class TableOrders(context: Context) {
     }
 
     fun deleteFromDB(){
-        val cursor = db.rawQuery("DELETE FROM ${OrdersTable.TABLE_NAME}", null)
+        var cursor = db.rawQuery("DELETE FROM ${OrdersTable.TABLE_NAME}", null)
+        cursor.moveToFirst()
+
+        cursor = db.rawQuery("UPDATE sqlite_sequence " +
+                "SET seq = 0 " +
+                "WHERE Name = ?", arrayOf(OrdersTable.TABLE_NAME))
         cursor.moveToFirst()
     }
 }

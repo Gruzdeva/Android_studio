@@ -68,8 +68,11 @@ class AdapterCartRecycler(context: Context): RecyclerView.Adapter<AdapterCartRec
             val tableUserOrder = TableUserOrder(context)
             tableUserOrder.deletePosition(position + 1)
 
+
+            //notifyDataSetChanged()
+            notifyItemRangeChanged(position, itemCount - position)
             notifyItemRemoved(position)
-            notifyItemRangeChanged(position, getItemCount() - position)
+
         }
     }
 

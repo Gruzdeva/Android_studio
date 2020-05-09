@@ -33,6 +33,7 @@ class Menu : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
+
         val tableMenu = TableMenu(this)
         tableMenu.loadFromDB()
 

@@ -30,8 +30,9 @@ class AccountFragment: Fragment() {
             textView.text = it
         })
 
-        val userProfile = UserProfile.getInstance()
+
         val tableUsers = TableUsers(activity!!.applicationContext)
+        val userProfile = tableUsers.loadRemember()
 
         val name: TextView = root.findViewById(R.id.name_of_account)
         val points: TextView = root.findViewById(R.id.points_acc)

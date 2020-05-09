@@ -10,7 +10,7 @@ class TableUsers(context: Context) {
     private val dbHelper = DBHelperUsers(context)
     private val db = dbHelper.writableDatabase
 
-    val cursor = db.query(UserTable.TABLE_NAME, null, null, null, null , null, null)
+    var cursor = db.query(UserTable.TABLE_NAME, null, null, null, null , null, null)
 
     private var indexId = cursor.getColumnIndex(UserTable.COLUMN_ID)
     private var indexLogin = cursor.getColumnIndex(UserTable.COLUMN_LOGIN)
@@ -21,11 +21,11 @@ class TableUsers(context: Context) {
 
     private var userProfile = UserProfile.getInstance()
 
-    fun signIn(login: String, password: String){
-        val cursor = db.rawQuery("SELECT * FROM ${UserTable.TABLE_NAME} " +
+    fun signIn(){
+        cursor = db.rawQuery("SELECT * FROM ${UserTable.TABLE_NAME} " +
                 "WHERE ${UserTable.COLUMN_LOGIN} = ? AND " +
                 "${UserTable.COLUMN_PASSWORD} = ? ",
-            arrayOf(login, password))
+            arrayOf(userProfile.login, userProfile.password))
         cursor.moveToFirst()
 
         userProfile.id = cursor.getInt(indexId)
@@ -35,10 +35,8 @@ class TableUsers(context: Context) {
         val cv = ContentValues().apply {
             put(UserTable.COLUMN_REMEMBER, 1)
         }
-        db.update(UserTable.TABLE_NAME, cv, UserTable.COLUMN_ID + "=" + cursor.getInt(indexId).toString(),null)
-
-//        cursor.close()
-//        db.close()
+        db.update(UserTable.TABLE_NAME, cv, UserTable.COLUMN_ID + "=" + userProfile.id.toString(),null)
+        cursor.close()
     }
 
     fun signUp(){
@@ -64,8 +62,7 @@ class TableUsers(context: Context) {
         }
         db.update(UserTable.TABLE_NAME, cv, UserTable.COLUMN_ID + "=" + userProfile.id.toString(),null)
 
-//        cursor.close()
-//        db.close()
+        cursor.close()
     }
 
     fun logOut(){// add later
@@ -76,7 +73,7 @@ class TableUsers(context: Context) {
     }
 
     fun checkLogin(login: String): Boolean {
-        val cursor = db.rawQuery("SELECT * FROM ${UserTable.TABLE_NAME} " +
+        cursor = db.rawQuery("SELECT * FROM ${UserTable.TABLE_NAME} " +
                 "WHERE ${UserTable.COLUMN_LOGIN} = ? ", arrayOf(login))
         cursor.moveToFirst()
 
@@ -84,7 +81,7 @@ class TableUsers(context: Context) {
     }
 
     fun checkProfile(login: String, password: String): Boolean {
-        val cursor = db.rawQuery("SELECT * FROM ${UserTable.TABLE_NAME} " +
+        cursor = db.rawQuery("SELECT * FROM ${UserTable.TABLE_NAME} " +
                 "WHERE ${UserTable.COLUMN_LOGIN} = ? AND " +
                 "${UserTable.COLUMN_PASSWORD} = ? ", arrayOf(login, password))
         cursor.moveToFirst()
@@ -93,15 +90,15 @@ class TableUsers(context: Context) {
     }
 
     fun checkRemember(): Boolean {
-        val cursor = db.rawQuery("SELECT * FROM ${UserTable.TABLE_NAME} " +
+        cursor = db.rawQuery("SELECT * FROM ${UserTable.TABLE_NAME} " +
                 "WHERE ${UserTable.COLUMN_REMEMBER} = ? ", arrayOf("1"))
         cursor.moveToFirst()
 
         return cursor.count != 0
     }
 
-    fun loadRemember(){
-        val cursor = db.rawQuery("SELECT * FROM ${UserTable.TABLE_NAME} " +
+    fun loadRemember(): UserProfile{
+        cursor = db.rawQuery("SELECT * FROM ${UserTable.TABLE_NAME} " +
                 "WHERE ${UserTable.COLUMN_REMEMBER} = ? ", arrayOf("1"))
         cursor.moveToFirst()
 
@@ -111,12 +108,13 @@ class TableUsers(context: Context) {
         userProfile.password = cursor.getString(indexPassword)
         userProfile.points = cursor.getInt(indexPoints)
 
-//        cursor.close()
-//        db.close()
+        cursor.close()
+
+        return userProfile
     }
 
     fun checkForgot(login: String, name: String): Boolean{ //maybe need modify
-        val cursor = db.rawQuery("SELECT * FROM ${UserTable.TABLE_NAME} " +
+        cursor = db.rawQuery("SELECT * FROM ${UserTable.TABLE_NAME} " +
                 "WHERE ${UserTable.COLUMN_LOGIN} = ? AND " +
                 "${UserTable.COLUMN_NAME} = ? ", arrayOf(login, name))
         cursor.moveToFirst()
@@ -125,7 +123,7 @@ class TableUsers(context: Context) {
     }
 
     fun getPass(login: String, name: String): String{
-        val cursor = db.rawQuery("SELECT ${UserTable.COLUMN_PASSWORD} FROM ${UserTable.TABLE_NAME} " +
+        cursor = db.rawQuery("SELECT ${UserTable.COLUMN_PASSWORD} FROM ${UserTable.TABLE_NAME} " +
                 "WHERE ${UserTable.COLUMN_LOGIN} = ? AND " +
                 "${UserTable.COLUMN_NAME} = ? ", arrayOf(login, name))
         cursor.moveToFirst()
@@ -134,12 +132,17 @@ class TableUsers(context: Context) {
     }
 
     fun deleteFromTable(){// delete later!
-        val cursor = db.rawQuery("DELETE FROM ${UserTable.TABLE_NAME}", null)
+        cursor = db.rawQuery("DELETE FROM ${UserTable.TABLE_NAME}", null)
+        cursor.moveToFirst()
+
+        cursor = db.rawQuery("UPDATE sqlite_sequence " +
+                "SET seq = 0 " +
+                "WHERE Name = ?", arrayOf(UserTable.TABLE_NAME))
         cursor.moveToFirst()
     }
 
     fun tableInfo(){
-        val cursor = db.rawQuery("SELECT * FROM ${UserTable.TABLE_NAME}", null)
+        cursor = db.rawQuery("SELECT * FROM ${UserTable.TABLE_NAME}", null)
         cursor.moveToFirst()
 
         while(!cursor.isAfterLast){
@@ -158,7 +161,6 @@ class TableUsers(context: Context) {
         }
 
         db.update(UserTable.TABLE_NAME, cv, UserTable.COLUMN_ID + "=" + userProfile.id.toString(),null)
-
     }
 
     fun close(){
