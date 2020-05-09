@@ -2,18 +2,21 @@ package com.example.app2.ui.cart
 
 import android.content.Context
 import android.database.Cursor
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.findFragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app2.DBReader.UserOrderTable
 import com.example.app2.R
 
 class AdapterCartRecycler(context: Context): RecyclerView.Adapter<AdapterCartRecycler.VHolder>(){
     val context = context
-    lateinit var removeBtn: Button
+
     val dbHelper = DBHelperUserOrder(context)
     val db = dbHelper.writableDatabase
     var cursor: Cursor
@@ -33,7 +36,8 @@ class AdapterCartRecycler(context: Context): RecyclerView.Adapter<AdapterCartRec
 
         val name: TextView = itemView.findViewById(R.id.cart_name)
         val price: TextView = itemView.findViewById(R.id.cart_price)
-
+        val removeBtn: Button = itemView.findViewById(R.id.remove_btn)
+        val deleteView: TextView = itemView.findViewById(R.id.deleted)
 
         fun bind(cursor: Cursor){
             if(!cursor.isAfterLast){
@@ -45,7 +49,15 @@ class AdapterCartRecycler(context: Context): RecyclerView.Adapter<AdapterCartRec
                 cursor.close()
             }
 
+            removeBtn.setOnClickListener{
+                val tableUserOrder = TableUserOrder(context)
+                tableUserOrder.deletePosition(adapterPosition + 1)
+                deleteView.text = "DELETED"
+//            notifyItemRemoved(position)
+//            notifyItemRangeChanged(position, itemCount)
 
+
+            }
         }
     }
 
@@ -53,7 +65,7 @@ class AdapterCartRecycler(context: Context): RecyclerView.Adapter<AdapterCartRec
         val context = parent.context
         val inflater = LayoutInflater.from(context)
         val view = inflater.inflate(R.layout.recycler_cart_item, parent, false)
-        removeBtn = view.findViewById(R.id.remove_btn)
+
 
         return VHolder(view)
     }
@@ -64,16 +76,7 @@ class AdapterCartRecycler(context: Context): RecyclerView.Adapter<AdapterCartRec
 
     override fun onBindViewHolder(holder: VHolder, position: Int) {
         holder.bind(cursor)
-        removeBtn.setOnClickListener{
-            val tableUserOrder = TableUserOrder(context)
-            tableUserOrder.deletePosition(position + 1)
 
-
-            //notifyDataSetChanged()
-            notifyItemRangeChanged(position, itemCount - position)
-            notifyItemRemoved(position)
-
-        }
     }
 
 }

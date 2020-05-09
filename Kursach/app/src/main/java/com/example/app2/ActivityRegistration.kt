@@ -29,12 +29,24 @@ class ActivityRegistration: AppCompatActivity(){
         val password2 = password2Text.text.toString()
         val name = nameText.text.toString()
 
-        if(tableUsers.checkLogin(login)){
-            val toast = Toast.makeText(this, "Данный логин сущесвтует, введите другой", Toast.LENGTH_SHORT)
+        //checker
+        if(login == ""){
+            val toast =
+                Toast.makeText(this, "Логин не может быть пустым", Toast.LENGTH_SHORT)
+            toast.setGravity(Gravity.TOP, 0, 0)
+            toast.show()
+        } else if(tableUsers.checkLogin(login)) {
+            val toast =
+                Toast.makeText(this, "Данный логин сущесвтует, введите другой", Toast.LENGTH_SHORT)
             toast.setGravity(Gravity.TOP, 0, 0)
             toast.show()
         } else {
-            if(password.compareTo(password2) != 0){
+            if (password.length < 5){
+                val toast =
+                    Toast.makeText(this, "Пароль должен содержать не менее 5 символов", Toast.LENGTH_SHORT)
+                toast.setGravity(Gravity.TOP, 0, 0)
+                toast.show()
+            }else if(password.compareTo(password2) != 0){
                 val toast = Toast.makeText(this, "Пароли не совпадают", Toast.LENGTH_SHORT)
                 toast.setGravity(Gravity.TOP, 0, 0)
                 toast.show()
@@ -52,4 +64,5 @@ class ActivityRegistration: AppCompatActivity(){
             }
         }
     }
+
 }

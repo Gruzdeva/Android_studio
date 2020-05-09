@@ -36,6 +36,7 @@ class AdapterRecycler(context: Context, size: Int): RecyclerView.Adapter<Adapter
                 val price = priceView.text.toString().toInt()
 
                 tableUserOrder.add_position(name, price)
+//                tableUserOrder.load_in_singleton()
             }
         }
     }
