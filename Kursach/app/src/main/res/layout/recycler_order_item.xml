@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:background="@drawable/recycler">
+    android:background="@drawable/recycler_2">
 
 <!--Может стоит добавить символическую картинку, для красочности-->
 
@@ -11,10 +11,10 @@
         android:id="@+id/number_order"
         android:layout_width="40dp"
         android:layout_height="70dp"
-        android:layout_marginLeft="17dp"
+        android:layout_marginLeft="29dp"
         android:layout_marginTop="15dp"
         android:text="number"
-        android:textColor="@color/account"
+        android:textColor="@color/text_sum"
         android:textSize="50dp"
         android:textStyle="bold" />
 
@@ -22,10 +22,10 @@
         android:id="@+id/cost_order"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="75dp"
         android:text="cost"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/account"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/text_sum"
         android:textSize="50dp"
         android:textStyle="bold" />
 
