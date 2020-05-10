@@ -38,9 +38,10 @@
         <Button
             android:id="@+id/pay"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/remove_press"
             android:onClick="pay_for_order"
             android:text="PAY" />
     </LinearLayout>
