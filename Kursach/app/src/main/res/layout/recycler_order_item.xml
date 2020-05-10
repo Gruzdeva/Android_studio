@@ -11,8 +11,8 @@
         android:id="@+id/number_order"
         android:layout_width="40dp"
         android:layout_height="70dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="15dp"
         android:text="number"
         android:textColor="@color/account"
         android:textSize="50dp"
@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:text="cost"
+        android:layout_marginTop="10dp"
         android:textColor="@color/account"
         android:textSize="50dp"
         android:textStyle="bold" />
