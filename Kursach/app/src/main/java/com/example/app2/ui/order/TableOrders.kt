@@ -2,9 +2,6 @@ package com.example.app2.ui.order
 
 import android.content.ContentValues
 import android.content.Context
-import android.database.Cursor
-import android.util.Log
-import com.example.app2.DBReader
 import com.example.app2.DBReader.OrdersTable
 import com.example.app2.UserProfile
 

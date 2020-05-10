@@ -1,7 +1,6 @@
 package com.example.app2.ui.menu
 
 import android.content.Context
-import android.util.Log
 import com.example.app2.DBReader.MenuTable
 
 class TableMenu(context: Context) {

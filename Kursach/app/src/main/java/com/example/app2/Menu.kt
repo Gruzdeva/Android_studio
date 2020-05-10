@@ -2,7 +2,6 @@ package com.example.app2
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.Gravity
 import android.view.Menu
 import android.view.View
@@ -33,6 +32,8 @@ class Menu : AppCompatActivity() {
 
         val tableMenu = TableMenu(this)
         tableMenu.loadFromDB()
+        val tableUserOrder = TableUserOrder(this)
+        tableUserOrder.delete_db_data()
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)

@@ -5,7 +5,6 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.app2.DBReader.UserOrderTable
 
-
 class DBHelperUserOrder(context: Context): SQLiteOpenHelper(context,
     DB_NAME, null,
     DB_VERSION

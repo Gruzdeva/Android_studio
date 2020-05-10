@@ -20,7 +20,6 @@ class MenuFragment: Fragment() {
         val root = inflater.inflate(R.layout.fragment_menu, container, false)
         val myRecycler = root.findViewById<RecyclerView>(R.id.myRecycler)
 
-//        need fix!
         myRecycler.layoutManager = LinearLayoutManager(activity)
         myRecycler.setHasFixedSize(true)
 

@@ -58,14 +58,5 @@ class ActivityAuthorization : AppCompatActivity() {
         val toast = Toast.makeText(this, "DELETE", Toast.LENGTH_SHORT)
         toast.show()
     }
-
-    fun proverka(view: View) {
-        val tableUsers = TableUsers(this)
-        tableUsers.tableInfo()
-        tableUsers.close()
-
-        val toast = Toast.makeText(this, "CHECK", Toast.LENGTH_SHORT)
-        toast.show()
-    }
 }
 

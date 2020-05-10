@@ -35,13 +35,11 @@ class ActivitySplashScreen: AppCompatActivity() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-
         outState.putBoolean("flag", true)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-
         flag = savedInstanceState.getBoolean("flag")
     }
 }

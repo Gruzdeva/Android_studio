@@ -10,9 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app2.R
 
-
 class CartFragment: Fragment() {
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,6 +22,7 @@ class CartFragment: Fragment() {
         val cost = root.findViewById<TextView>(R.id.cart_cost)
         val tableUserOrder =
             TableUserOrder(activity!!.applicationContext)
+
         tableUserOrder.updateTableData()
         cartRecycler.layoutManager = LinearLayoutManager(activity)
         cartRecycler.setHasFixedSize(true)

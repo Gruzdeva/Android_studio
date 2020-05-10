@@ -10,7 +10,6 @@ import java.io.IOException
 import java.io.OutputStream
 import java.sql.SQLException
 
-
 class DBHelperMenu(context: Context) : SQLiteOpenHelper(context,
     DB_NAME, null,
     DB_VERSION
@@ -64,7 +63,6 @@ class DBHelperMenu(context: Context) : SQLiteOpenHelper(context,
     @Throws(IOException::class)
     private fun copyDBFile() {
         val mInput = mContext.assets.open(DB_NAME)
-        //InputStream mInput = mContext.getResources().openRawResource(R.raw.info);
         val mOutput: OutputStream =
             FileOutputStream(DB_PATH + DB_NAME)
         val mBuffer = ByteArray(1024)

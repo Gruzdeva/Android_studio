@@ -3,7 +3,6 @@ package com.example.app2.ui.cart
 import android.content.ContentValues
 import android.content.Context
 import android.util.Log
-import com.example.app2.DBReader
 import com.example.app2.DBReader.UserOrderTable
 
 class TableUserOrder(context: Context) {

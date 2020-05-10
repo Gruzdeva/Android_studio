@@ -1,7 +1,6 @@
 package com.example.app2.ui.menu
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,7 +35,6 @@ class AdapterRecycler(context: Context, size: Int): RecyclerView.Adapter<Adapter
                 val price = priceView.text.toString().toInt()
 
                 tableUserOrder.add_position(name, price)
-//                tableUserOrder.load_in_singleton()
             }
         }
     }

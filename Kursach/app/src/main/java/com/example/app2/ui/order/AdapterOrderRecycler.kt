@@ -1,16 +1,12 @@
 package com.example.app2.ui.order
 
 import android.content.Context
-import android.database.Cursor
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app2.R
-import com.example.app2.UserProfile
-import com.example.app2.DBReader.OrdersTable
 
 class AdapterOrderRecycler(context: Context, size: Int): RecyclerView.Adapter<AdapterOrderRecycler.VHolder>() {
     val orderSingleton = OrderSingleton.getInstance()!!

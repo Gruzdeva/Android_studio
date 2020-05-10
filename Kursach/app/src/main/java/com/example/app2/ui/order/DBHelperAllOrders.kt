@@ -9,15 +9,14 @@ import com.example.app2.DBReader.UserTable
 class DBHelperAllOrders(context: Context): SQLiteOpenHelper(context, DB_NAME, null, DB_VERSION) {
     companion object{
         val DB_NAME = "Orders.db"
-        val DB_VERSION = 1
+        val DB_VERSION = 2
     }
     override fun onCreate(db: SQLiteDatabase?) {
         db!!.execSQL("CREATE TABLE ${OrdersTable.TABLE_NAME} (" +
                 "${OrdersTable.COLUMN_ID} INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "${OrdersTable.COLUMN_USER_ID} INTEGER," +
                 "${OrdersTable.COLUMN_NUMBER} INTEGER," +
-                "${OrdersTable.COLUMN_COST} INTEGER," +
-                "FOREIGN KEY (${OrdersTable.COLUMN_USER_ID}) REFERENCES ${UserTable.TABLE_NAME} (${UserTable.COLUMN_ID}));")
+                "${OrdersTable.COLUMN_COST} INTEGER);")
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
