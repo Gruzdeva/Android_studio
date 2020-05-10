@@ -3,8 +3,10 @@ package com.example.app2
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.view.Menu
 import android.view.View
+import android.widget.Toast
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -75,14 +77,20 @@ class Menu : AppCompatActivity() {
         var userProfile = UserProfile.getInstance()
 
         val cost = tableUserOrder.order_cost()
-        userProfile.points = (userProfile.points + cost * 0.05).toInt()
-        tableUsers.updatePoints(userProfile.points)
+        if(cost != 0) {
+            userProfile.points = (userProfile.points + cost * 0.05).toInt()
+            tableUsers.updatePoints(userProfile.points)
 
-        Log.d("COST", userProfile.points.toString())
+            val toast = Toast.makeText(this, "Заказ принят", Toast.LENGTH_SHORT)
+            toast.setGravity(Gravity.TOP, 0, 0)
+            toast.show()
 
-        //tableUserOrder.tableInfo()
-        tableUserOrder.delete_db_data()
-        tableOrders.addNewOrder(cost)
-
+            tableUserOrder.delete_db_data()
+            tableOrders.addNewOrder(cost)
+        } else {
+            val toast = Toast.makeText(this, "Корзина пуста", Toast.LENGTH_SHORT)
+            toast.setGravity(Gravity.TOP, 0, 0)
+            toast.show()
+        }
     }
 }
