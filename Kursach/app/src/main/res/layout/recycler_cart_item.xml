@@ -2,19 +2,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="100dp">
 
     <TextView
         android:id="@+id/cart_name"
-        android:layout_width="200dp"
-        android:layout_height="46dp"
+        android:layout_width="223dp"
+        android:layout_height="43dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="265dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="176dp"
         android:text="deleted"
+        android:textColor="@color/text_food"
         android:textSize="22dp" />
 
     <TextView
@@ -24,9 +25,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="370dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="79dp"
+        android:layout_marginEnd="250dp"
+        android:textColor="@color/text_food"
         android:textSize="19dp" />
 
     <Button
@@ -34,16 +36,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="79dp"
         android:text="REMOVE" />
 
     <TextView
         android:id="@+id/deleted"
-        android:layout_width="140dp"
-        android:layout_height="50dp"
+        android:layout_width="138dp"
+        android:layout_height="39dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="289dp"
         android:layout_marginLeft="270dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="-17dp"
+        android:textColor="@color/text_food"
         android:textSize="16dp"
-        android:layout_marginTop="10dp"
-        />
+        android:textStyle="bold"/>
 </RelativeLayout>
