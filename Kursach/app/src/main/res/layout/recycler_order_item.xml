@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="1000dp"
+    android:layout_height="100dp"
     android:background="@drawable/recycler">
 
 <!--Может стоит добавить символическую картинку, для красочности-->

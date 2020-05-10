@@ -44,7 +44,7 @@
         android:layout_marginStart="265dp"
         android:layout_marginTop="75dp"
         android:layout_marginEnd="10dp"
-        android:background="@drawable/bg_account"
+        android:background="@drawable/bg_account_press"
         android:text="ADD"
         android:textColor="@color/text_food" />
 
