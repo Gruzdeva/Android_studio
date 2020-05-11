@@ -17,7 +17,6 @@ class AccountFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_account, container, false)
-        val textView: TextView = root.findViewById(R.id.text_account)
 
         val tableUsers = TableUsers(activity!!.applicationContext)
         var userProfile = tableUsers.loadRemember()
@@ -27,7 +26,7 @@ class AccountFragment: Fragment() {
 
         name.text = userProfile.name
         points.text = "Points: ${userProfile.points}"
-        tableUsers.updatePoints(userProfile.points)
+
         return root
     }
 }

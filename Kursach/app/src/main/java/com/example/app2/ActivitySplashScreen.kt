@@ -10,8 +10,6 @@ class ActivitySplashScreen: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-
-        val tableUsers = TableUsers(this)
     }
 
     override fun onResume() {
@@ -22,7 +20,6 @@ class ActivitySplashScreen: AppCompatActivity() {
             Thread(Runnable {
                 Thread.sleep(2000)
 
-                //add later
                 if(tableUsers.checkRemember()) {
                     tableUsers.loadRemember()
                     startActivity(Intent(this, Menu::class.java))
