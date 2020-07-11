@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.util.Log
 import com.example.app2.DBReader.UserOrderTable
+import com.example.app2.UserProfile
 
 class TableUserOrder(context: Context) {
     private val dbHelper = DBHelperUserOrder(context)
@@ -15,6 +16,8 @@ class TableUserOrder(context: Context) {
     val indexName = cursor.getColumnIndex(UserOrderTable.COLUMN_NAME)
     val indexPrice = cursor.getColumnIndex(UserOrderTable.COLUMN_PRICE)
 
+    val userProfile = UserProfile.getInstance()
+
     fun add_position(name: String, price: Int){
         val cv = ContentValues().apply {
             put(UserOrderTable.COLUMN_NAME, name)
@@ -25,11 +28,16 @@ class TableUserOrder(context: Context) {
     }
 
     fun order_cost(): Int{
+
         cursor = db.rawQuery("SELECT SUM(${UserOrderTable.COLUMN_PRICE}) " +
                 "FROM ${UserOrderTable.TABLE_NAME}", null)
         cursor.moveToFirst()
         Log.d("COST", cursor.getInt(0).toString())
-        return cursor.getInt(0)
+
+        return if (userProfile.isPointsDeduct)
+            cursor.getInt(0) - userProfile.points
+        else
+            cursor.getInt(0)
     }
 
     fun delete_db_data(){

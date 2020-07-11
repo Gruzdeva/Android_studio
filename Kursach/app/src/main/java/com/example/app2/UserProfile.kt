@@ -6,6 +6,7 @@ class UserProfile {
     var name = String()
     var password = String()
     var points = 0
+    var isPointsDeduct = false
 
     companion object {
         private  var instance: UserProfile = UserProfile()

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Gravity
 import android.view.Menu
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -79,8 +80,14 @@ class Menu : AppCompatActivity() {
 
         val cost = tableUserOrder.order_cost()
         if(cost != 0) {
-            userProfile.points = (userProfile.points + cost * 0.05).toInt()
-            tableUsers.updatePoints(userProfile.points)
+            if (userProfile.isPointsDeduct){
+                userProfile.points = (cost * 0.05).toInt()
+                tableUsers.updatePoints(userProfile.points)
+                userProfile.isPointsDeduct = false
+            } else {
+                userProfile.points = (userProfile.points + cost * 0.05).toInt()
+                tableUsers.updatePoints(userProfile.points)
+            }
 
             val toast = Toast.makeText(this, "Заказ принят", Toast.LENGTH_SHORT)
             toast.setGravity(Gravity.TOP, 0, 0)
@@ -93,5 +100,14 @@ class Menu : AppCompatActivity() {
             toast.setGravity(Gravity.TOP, 0, 0)
             toast.show()
         }
+    }
+
+    fun deduct_points(view: View) {
+        val tableUserOrder = TableUserOrder(this)
+        val cost: TextView = this.findViewById(R.id.cart_cost)
+        val userProfile = UserProfile.getInstance()
+
+        userProfile.isPointsDeduct = true
+        cost.text = "COST: ${tableUserOrder.order_cost()}"
     }
 }

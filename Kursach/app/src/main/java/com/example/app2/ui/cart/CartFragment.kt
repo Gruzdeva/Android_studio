@@ -28,11 +28,9 @@ class CartFragment: Fragment() {
         cartRecycler.setHasFixedSize(true)
 
         cartRecycler.adapter =
-            AdapterCartRecycler(activity!!.applicationContext)
+            AdapterCartRecycler(activity!!.applicationContext, root)
 
         cost.text = "COST: ${tableUserOrder.order_cost()}"
         return root
     }
-
-
 }
