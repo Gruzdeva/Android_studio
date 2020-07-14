@@ -1,4 +1,4 @@
-package com.example.app2.ui.account
+package com.example.app2.Fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.app2.R
-import com.example.app2.TableUsers
+import com.example.app2.Tables.TableUsers
 
 class AccountFragment: Fragment() {
 
@@ -18,7 +18,8 @@ class AccountFragment: Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.fragment_account, container, false)
 
-        val tableUsers = TableUsers(activity!!.applicationContext)
+        val tableUsers =
+            TableUsers(activity!!.applicationContext)
         var userProfile = tableUsers.loadRemember()
 
         val name: TextView = root.findViewById(R.id.name_of_account)

@@ -1,8 +1,10 @@
-package com.example.app2
+package com.example.app2.Activities
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.app2.R
+import com.example.app2.Tables.TableUsers
 
 class ActivitySplashScreen: AppCompatActivity() {
     private var flag: Boolean = false

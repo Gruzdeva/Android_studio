@@ -1,4 +1,4 @@
-package com.example.app2
+package com.example.app2.Singletons
 
 class UserProfile {
     var id = 0
@@ -9,17 +9,20 @@ class UserProfile {
     var isPointsDeduct = false
 
     companion object {
-        private  var instance: UserProfile = UserProfile()
+        private  var instance: UserProfile =
+            UserProfile()
 
-        fun getInstance(): UserProfile{
+        fun getInstance(): UserProfile {
             if (instance == null) { //если объект еще не создан
-                instance = UserProfile() //создать новый объект
+                instance =
+                    UserProfile() //создать новый объект
             }
             return instance// вернуть ранее созданный объект
         }
 
         fun getNewObject(): UserProfile {
-                instance = UserProfile()
+                instance =
+                    UserProfile()
                 return instance
             }
     }

@@ -1,4 +1,4 @@
-package com.example.app2
+package com.example.app2.DBHelpers
 
 import android.provider.BaseColumns
 
@@ -31,7 +31,7 @@ object DBReader {
     object MenuTable: BaseColumns {
         const val TABLE_NAME = "Menu"
         const val COLUMN_ID = "food_id"
-        const val COLUMN_GROUP_ID = "id_group"
+        const val COLUMN_GROUP_ID = "group_id"
         const val COLUMN_NAME = "name"
         const val COLUMN_DESCRIPTION = "description"
         const val COLUMN_PRICE = "price"

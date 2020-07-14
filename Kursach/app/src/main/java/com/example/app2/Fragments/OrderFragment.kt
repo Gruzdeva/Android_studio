@@ -1,4 +1,4 @@
-package com.example.app2.ui.order
+package com.example.app2.Fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app2.R
+import com.example.app2.Adapters.AdapterOrderRecycler
+import com.example.app2.Tables.TableOrders
 
 class OrderFragment: Fragment() {
 
@@ -19,14 +21,18 @@ class OrderFragment: Fragment() {
         val root = inflater.inflate(R.layout.fragment_orders, container, false)
         val myRecylcer = root.findViewById<RecyclerView>(R.id.myOrdersRecycler)
 
-        val tableOrders = TableOrders(activity!!.applicationContext)
+        val tableOrders =
+            TableOrders(activity!!.applicationContext)
         tableOrders.load_in_singleton()
         val size = tableOrders.itemCount()
 
         myRecylcer.layoutManager = LinearLayoutManager(activity)
         myRecylcer.setHasFixedSize(true)
 
-        myRecylcer.adapter = AdapterOrderRecycler(activity!!.applicationContext, size)
+        myRecylcer.adapter = AdapterOrderRecycler(
+            activity!!.applicationContext,
+            size
+        )
         return root
     }
 }

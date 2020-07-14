@@ -1,9 +1,11 @@
-package com.example.app2
+package com.example.app2.Tables
 
 import android.content.ContentValues
 import android.content.Context
 import android.util.Log
-import com.example.app2.DBReader.UserTable
+import com.example.app2.DBHelpers.DBReader.UserTable
+import com.example.app2.DBHelpers.DBHelperUsers
+import com.example.app2.Singletons.UserProfile
 
 class TableUsers(context: Context) {
 
@@ -97,7 +99,7 @@ class TableUsers(context: Context) {
         return cursor.count != 0
     }
 
-    fun loadRemember(): UserProfile{
+    fun loadRemember(): UserProfile {
         cursor = db.rawQuery("SELECT * FROM ${UserTable.TABLE_NAME} " +
                 "WHERE ${UserTable.COLUMN_REMEMBER} = ? ", arrayOf("1"))
         cursor.moveToFirst()

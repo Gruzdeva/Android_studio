@@ -1,4 +1,4 @@
-package com.example.app2.ui.menu
+package com.example.app2.Adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,7 +8,8 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app2.R
-import com.example.app2.ui.cart.TableUserOrder
+import com.example.app2.Tables.TableUserOrder
+import com.example.app2.Singletons.MenuSingleton
 
 
 class AdapterRecycler(context: Context, size: Int): RecyclerView.Adapter<AdapterRecycler.myVHolder>() {
@@ -29,7 +30,8 @@ class AdapterRecycler(context: Context, size: Int): RecyclerView.Adapter<Adapter
             descriptionView.text = singleton.description[position]
 
             addBtn.setOnClickListener{
-                val tableUserOrder = TableUserOrder(context)
+                val tableUserOrder =
+                    TableUserOrder(context)
 
                 val name = nameView.text.toString()
                 val price = priceView.text.toString().toInt()

@@ -1,4 +1,4 @@
-package com.example.app2.ui.menu
+package com.example.app2.DBHelpers
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase

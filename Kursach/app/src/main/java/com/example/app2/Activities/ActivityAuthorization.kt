@@ -1,4 +1,4 @@
-package com.example.app2
+package com.example.app2.Activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,10 @@ import android.view.Gravity
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
-import com.example.app2.ui.order.TableOrders
+import com.example.app2.*
+import com.example.app2.Singletons.UserProfile
+import com.example.app2.Tables.TableUsers
+import com.example.app2.Tables.TableOrders
 
 class ActivityAuthorization : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

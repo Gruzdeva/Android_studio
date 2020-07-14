@@ -1,7 +1,10 @@
-package com.example.app2.ui.menu
+package com.example.app2.Tables
 
 import android.content.Context
-import com.example.app2.DBReader.MenuTable
+import android.util.Log
+import com.example.app2.DBHelpers.DBReader.MenuTable
+import com.example.app2.DBHelpers.DBHelperMenu
+import com.example.app2.Singletons.MenuSingleton
 
 class TableMenu(context: Context) {
     val dbHelper = DBHelperMenu(context)
@@ -15,10 +18,11 @@ class TableMenu(context: Context) {
     val indexDescription = cursor.getColumnIndex(MenuTable.COLUMN_DESCRIPTION)
     val indexPrice = cursor.getColumnIndex(MenuTable.COLUMN_PRICE)
 
-    var menuSingleton = MenuSingleton.getInstance()!!
+    var menuSingleton = MenuSingleton.getNewObject()
 
-    fun loadFromDB(){
-        cursor = db.rawQuery("SELECT * FROM ${MenuTable.TABLE_NAME}", null)
+    fun loadFromDB(category: Int) {
+        cursor = db.rawQuery("SELECT * FROM ${MenuTable.TABLE_NAME} " +
+                "WHERE ${MenuTable.COLUMN_GROUP_ID} = ?", arrayOf(category.toString()))
         cursor.moveToFirst()
         var i = 0
 
@@ -27,9 +31,18 @@ class TableMenu(context: Context) {
             menuSingleton.description[i] = cursor.getString(indexDescription)
             menuSingleton.price[i] = cursor.getInt(indexPrice)
 
+            Log.d("EDAAA","${cursor.getString(indexName)} ${cursor.getString(indexDescription)} ${cursor.getInt(indexPrice)}")
+
             i++
             cursor.moveToNext()
         }
+    }
+
+    fun getItemCount(category: Int): Int {
+        cursor = db.rawQuery("SELECT * FROM ${MenuTable.TABLE_NAME} " +
+                "WHERE ${MenuTable.COLUMN_GROUP_ID} = ?", arrayOf(category.toString()))
+        Log.d("KOLVO", "${cursor.count}")
+        return cursor.count
     }
 
 }

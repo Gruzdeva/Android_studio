@@ -1,4 +1,4 @@
-package com.example.app2.ui.cart
+package com.example.app2.Adapters
 
 import android.content.Context
 import android.database.Cursor
@@ -8,8 +8,10 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.app2.DBReader.UserOrderTable
+import com.example.app2.DBHelpers.DBReader.UserOrderTable
 import com.example.app2.R
+import com.example.app2.DBHelpers.DBHelperUserOrder
+import com.example.app2.Tables.TableUserOrder
 
 class AdapterCartRecycler(context: Context, root: View): RecyclerView.Adapter<AdapterCartRecycler.VHolder>(){
     val context = context
@@ -48,7 +50,8 @@ class AdapterCartRecycler(context: Context, root: View): RecyclerView.Adapter<Ad
             }
 
             removeBtn.setOnClickListener{
-                val tableUserOrder = TableUserOrder(context)
+                val tableUserOrder =
+                    TableUserOrder(context)
                 tableUserOrder.deletePosition(adapterPosition + 1)
                 deleteView.text = "DELETED"
                 cost.text = "COST: ${tableUserOrder.order_cost()}"
@@ -61,7 +64,10 @@ class AdapterCartRecycler(context: Context, root: View): RecyclerView.Adapter<Ad
         val inflater = LayoutInflater.from(context)
         val view = inflater.inflate(R.layout.recycler_cart_item, parent, false)
         val root = inflater.inflate(R.layout.fragment_cart, parent, false)
-        return VHolder(view, root)
+        return VHolder(
+            view,
+            root
+        )
     }
 
     override fun getItemCount(): Int {

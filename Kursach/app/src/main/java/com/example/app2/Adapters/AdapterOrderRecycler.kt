@@ -1,4 +1,4 @@
-package com.example.app2.ui.order
+package com.example.app2.Adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app2.R
+import com.example.app2.Singletons.OrderSingleton
 
 class AdapterOrderRecycler(context: Context, size: Int): RecyclerView.Adapter<AdapterOrderRecycler.VHolder>() {
     val orderSingleton = OrderSingleton.getInstance()!!
@@ -21,7 +22,7 @@ class AdapterOrderRecycler(context: Context, size: Int): RecyclerView.Adapter<Ad
             cost.text = singleton.costs[position].toString()
         }
     }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterOrderRecycler.VHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VHolder {
         val context = parent.context
         val inflater = LayoutInflater.from(context)
         val view = inflater.inflate(R.layout.recycler_order_item, parent, false)
@@ -33,7 +34,7 @@ class AdapterOrderRecycler(context: Context, size: Int): RecyclerView.Adapter<Ad
         return size
     }
 
-    override fun onBindViewHolder(holder: AdapterOrderRecycler.VHolder, position: Int) {
+    override fun onBindViewHolder(holder: VHolder, position: Int) {
         holder.bind(orderSingleton, position)
     }
 

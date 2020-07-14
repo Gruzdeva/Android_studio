@@ -1,12 +1,14 @@
-package com.example.app2.ui.order
+package com.example.app2.DBHelpers
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.example.app2.DBReader.OrdersTable
-import com.example.app2.DBReader.UserTable
+import com.example.app2.DBHelpers.DBReader.OrdersTable
 
-class DBHelperAllOrders(context: Context): SQLiteOpenHelper(context, DB_NAME, null, DB_VERSION) {
+class DBHelperAllOrders(context: Context): SQLiteOpenHelper(context,
+    DB_NAME, null,
+    DB_VERSION
+) {
     companion object{
         val DB_NAME = "Orders.db"
         val DB_VERSION = 2

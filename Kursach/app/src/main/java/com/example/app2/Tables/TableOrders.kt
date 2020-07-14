@@ -1,9 +1,11 @@
-package com.example.app2.ui.order
+package com.example.app2.Tables
 
 import android.content.ContentValues
 import android.content.Context
-import com.example.app2.DBReader.OrdersTable
-import com.example.app2.UserProfile
+import com.example.app2.DBHelpers.DBReader.OrdersTable
+import com.example.app2.Singletons.UserProfile
+import com.example.app2.DBHelpers.DBHelperAllOrders
+import com.example.app2.Singletons.OrderSingleton
 
 class TableOrders(context: Context) {
     val dbHelper = DBHelperAllOrders(context)

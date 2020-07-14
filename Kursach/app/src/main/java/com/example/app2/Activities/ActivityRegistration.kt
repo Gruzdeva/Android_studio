@@ -1,4 +1,4 @@
-package com.example.app2
+package com.example.app2.Activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,9 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.app2.R
+import com.example.app2.Tables.TableUsers
+import com.example.app2.Singletons.UserProfile
 
 class ActivityRegistration: AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {

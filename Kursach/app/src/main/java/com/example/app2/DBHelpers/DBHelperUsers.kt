@@ -1,11 +1,14 @@
-package com.example.app2
+package com.example.app2.DBHelpers
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.example.app2.DBReader.UserTable
+import com.example.app2.DBHelpers.DBReader.UserTable
 
-class DBHelperUsers(context: Context): SQLiteOpenHelper(context, DB_NAME, null, DB_VERSION) {
+class DBHelperUsers(context: Context): SQLiteOpenHelper(context,
+    DB_NAME, null,
+    DB_VERSION
+) {
     val context = context
     companion object{
         val DB_NAME = "Test.db"

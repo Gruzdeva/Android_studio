@@ -1,13 +1,15 @@
-package com.example.app2.ui.cart
+package com.example.app2.Tables
 
 import android.content.ContentValues
 import android.content.Context
 import android.util.Log
-import com.example.app2.DBReader.UserOrderTable
-import com.example.app2.UserProfile
+import com.example.app2.DBHelpers.DBReader.UserOrderTable
+import com.example.app2.Singletons.UserProfile
+import com.example.app2.DBHelpers.DBHelperUserOrder
 
 class TableUserOrder(context: Context) {
-    private val dbHelper = DBHelperUserOrder(context)
+    private val dbHelper =
+        DBHelperUserOrder(context)
     private val db = dbHelper.writableDatabase
 
     var cursor = db.query(UserOrderTable.TABLE_NAME, null, null, null, null , null, null)

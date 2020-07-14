@@ -1,4 +1,4 @@
-package com.example.app2
+package com.example.app2.Activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -16,9 +16,12 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.example.app2.ui.cart.TableUserOrder
-import com.example.app2.ui.menu.TableMenu
-import com.example.app2.ui.order.TableOrders
+import com.example.app2.R
+import com.example.app2.Tables.TableUsers
+import com.example.app2.Singletons.UserProfile
+import com.example.app2.Tables.TableUserOrder
+import com.example.app2.Tables.TableMenu
+import com.example.app2.Tables.TableOrders
 
 class Menu : AppCompatActivity() {
 
@@ -31,8 +34,8 @@ class Menu : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
 
-        val tableMenu = TableMenu(this)
-        tableMenu.loadFromDB()
+//        val tableMenu = TableMenu(this)
+//        tableMenu.loadFromDB()
         val tableUserOrder = TableUserOrder(this)
         tableUserOrder.delete_db_data()
 

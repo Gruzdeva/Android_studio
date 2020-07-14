@@ -1,4 +1,4 @@
-package com.example.app2.ui.order
+package com.example.app2.Singletons
 
 class OrderSingleton {
     var numbers: Array<Int?> = arrayOfNulls(200)
@@ -9,7 +9,8 @@ class OrderSingleton {
 
         fun getInstance(): OrderSingleton?{
             if(instance == null){
-                instance = OrderSingleton()
+                instance =
+                    OrderSingleton()
                 instance.numbers = arrayOfNulls(200)
                 instance.costs = arrayOfNulls(200)
             }

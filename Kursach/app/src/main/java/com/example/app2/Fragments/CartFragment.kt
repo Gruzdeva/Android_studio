@@ -1,4 +1,4 @@
-package com.example.app2.ui.cart
+package com.example.app2.Fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app2.R
+import com.example.app2.Adapters.AdapterCartRecycler
+import com.example.app2.Tables.TableUserOrder
 
 class CartFragment: Fragment() {
 
@@ -28,7 +30,10 @@ class CartFragment: Fragment() {
         cartRecycler.setHasFixedSize(true)
 
         cartRecycler.adapter =
-            AdapterCartRecycler(activity!!.applicationContext, root)
+            AdapterCartRecycler(
+                activity!!.applicationContext,
+                root
+            )
 
         cost.text = "COST: ${tableUserOrder.order_cost()}"
         return root
