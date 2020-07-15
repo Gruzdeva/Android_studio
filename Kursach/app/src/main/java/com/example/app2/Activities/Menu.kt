@@ -2,6 +2,7 @@ package com.example.app2.Activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.view.Menu
 import android.view.View
@@ -82,11 +83,19 @@ class Menu : AppCompatActivity() {
         var userProfile = UserProfile.getInstance()
 
         val cost = tableUserOrder.order_cost()
+
         if(cost != 0) {
             if (userProfile.isPointsDeduct){
-                userProfile.points = (cost * 0.05).toInt()
-                tableUsers.updatePoints(userProfile.points)
-                userProfile.isPointsDeduct = false
+                if (cost < userProfile.points){
+                    userProfile.points = userProfile.points - cost
+                    tableUsers.updatePoints(userProfile.points)
+                    userProfile.isPointsDeduct = false
+                } else {
+                    userProfile.points = ((cost - userProfile.points) * 0.05).toInt()
+                    tableUsers.updatePoints(userProfile.points)
+
+                    userProfile.isPointsDeduct = false
+                }
             } else {
                 userProfile.points = (userProfile.points + cost * 0.05).toInt()
                 tableUsers.updatePoints(userProfile.points)
@@ -107,10 +116,13 @@ class Menu : AppCompatActivity() {
 
     fun deduct_points(view: View) {
         val tableUserOrder = TableUserOrder(this)
-        val cost: TextView = this.findViewById(R.id.cart_cost)
+        val costView: TextView = this.findViewById(R.id.cart_cost)
         val userProfile = UserProfile.getInstance()
+        val cost = tableUserOrder.order_cost()
 
         userProfile.isPointsDeduct = true
-        cost.text = "COST: ${tableUserOrder.order_cost()}"
+
+        if (cost < userProfile.points) costView.text = "0"
+        else costView.text = "COST: ${cost - userProfile.points}"
     }
 }

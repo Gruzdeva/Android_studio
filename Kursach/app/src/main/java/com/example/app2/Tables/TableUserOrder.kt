@@ -36,10 +36,7 @@ class TableUserOrder(context: Context) {
         cursor.moveToFirst()
         Log.d("COST", cursor.getInt(0).toString())
 
-        return if (userProfile.isPointsDeduct)
-            cursor.getInt(0) - userProfile.points
-        else
-            cursor.getInt(0)
+         return cursor.getInt(0)
     }
 
     fun delete_db_data(){

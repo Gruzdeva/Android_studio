@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app2.R
 import com.example.app2.Adapters.AdapterCartRecycler
+import com.example.app2.Singletons.UserProfile
 import com.example.app2.Tables.TableUserOrder
 
 class CartFragment: Fragment() {
@@ -21,9 +22,11 @@ class CartFragment: Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.fragment_cart, container, false)
         val cartRecycler = root.findViewById<RecyclerView>(R.id.myCartRecycler)
-        val cost = root.findViewById<TextView>(R.id.cart_cost)
+        val costView = root.findViewById<TextView>(R.id.cart_cost)
         val tableUserOrder =
             TableUserOrder(activity!!.applicationContext)
+        val userProfile = UserProfile.getInstance()
+        val cost = tableUserOrder.order_cost()
 
         tableUserOrder.updateTableData()
         cartRecycler.layoutManager = LinearLayoutManager(activity)
@@ -35,7 +38,15 @@ class CartFragment: Fragment() {
                 root
             )
 
-        cost.text = "COST: ${tableUserOrder.order_cost()}"
+        if (userProfile.isPointsDeduct){
+            if (cost < userProfile.points) {
+                costView.text = "0"
+            } else {
+                costView.text = "COST: ${cost - userProfile.points}"
+            }
+        } else {
+            costView.text = "COST: ${cost}"
+        }
         return root
     }
 }
