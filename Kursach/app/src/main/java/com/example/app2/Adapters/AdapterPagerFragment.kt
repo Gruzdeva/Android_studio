@@ -3,6 +3,7 @@ package com.example.app2.Adapters
 import androidx.fragment.app.FragmentManager
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentPagerAdapter
 import com.example.app2.Fragments.PagerFragment
@@ -19,11 +20,11 @@ class AdapterPagerFragment(fm: FragmentManager, context: Context, size: Int)
         val arguments = Bundle()
 
         arguments.putInt(CATEGORY, position + 1)
-
+        //позиция не всегда передается, или не всегда берется из аргументов, аааааааааааааааааааааааааааа
         val pagerFrag = PagerFragment()
         pagerFrag.arguments = arguments
 
-        return  pagerFrag
+        return pagerFrag
     }
 
     override fun getCount(): Int {

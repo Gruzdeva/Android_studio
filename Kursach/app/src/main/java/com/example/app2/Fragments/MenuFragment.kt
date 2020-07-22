@@ -1,6 +1,7 @@
 package com.example.app2.Fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,10 +22,10 @@ class MenuFragment: Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.fragment_menu_pager, container, false)
 
-        val myAdapter = AdapterPagerFragment(fragmentManager!!, activity!!.applicationContext, 5)
         val viewPager = root.findViewById<ViewPager>(R.id.viewpager)
-
+        val myAdapter = AdapterPagerFragment(fragmentManager!!, activity!!.applicationContext, 5)
         viewPager.adapter = myAdapter
+
         return root
     }
 }

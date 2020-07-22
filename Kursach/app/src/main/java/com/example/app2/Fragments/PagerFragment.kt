@@ -1,6 +1,7 @@
 package com.example.app2.Fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,7 @@ import com.example.app2.Tables.TableMenu
 
 class PagerFragment: Fragment() {
     val CATEGORY = "Category"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -24,23 +26,24 @@ class PagerFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_menu, container, false)
+
         val tableMenu = TableMenu(activity!!.applicationContext)
         val arguments = arguments
         val myRecycler = view.findViewById<RecyclerView>(R.id.myRecycler)
+        var category = 0
 
-        myRecycler.layoutManager = LinearLayoutManager(activity)
+        arguments?.let {
+            category = arguments.getInt(CATEGORY)
+            Log.d("CATEGORY", category.toString())
+        }
+
+        tableMenu.loadFromDB(category)
+        myRecycler.layoutManager = LinearLayoutManager(activity!!.applicationContext)
         myRecycler.setHasFixedSize(true)
 
-        if(arguments != null) {
-            val category = arguments.getInt(CATEGORY)
-
-            tableMenu.loadFromDB(category)
-            myRecycler.adapter =
-                AdapterRecycler(
-                    activity!!.applicationContext,
-                    tableMenu.getItemCount(category)
-                )
-        }
+        myRecycler.adapter = AdapterRecycler(
+                activity!!.applicationContext,
+                tableMenu.getItemCount(category))
 
         return view
     }

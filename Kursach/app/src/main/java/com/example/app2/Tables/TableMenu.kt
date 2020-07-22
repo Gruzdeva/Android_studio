@@ -26,12 +26,12 @@ class TableMenu(context: Context) {
         cursor.moveToFirst()
         var i = 0
 
+        Log.d("KOLVOl", "${category}")
+
         while (!cursor.isAfterLast) {
             menuSingleton.name[i] = cursor.getString(indexName)
             menuSingleton.description[i] = cursor.getString(indexDescription)
             menuSingleton.price[i] = cursor.getInt(indexPrice)
-
-            Log.d("EDAAA","${cursor.getString(indexName)} ${cursor.getString(indexDescription)} ${cursor.getInt(indexPrice)}")
 
             i++
             cursor.moveToNext()

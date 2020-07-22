@@ -2,6 +2,7 @@ package com.example.app2.Tables
 
 import android.content.ContentValues
 import android.content.Context
+import android.util.Log
 import com.example.app2.DBHelpers.DBReader.OrdersTable
 import com.example.app2.Singletons.UserProfile
 import com.example.app2.DBHelpers.DBHelperAllOrders
@@ -14,8 +15,15 @@ class TableOrders(context: Context) {
     val userProfile = UserProfile.getInstance()
     val orderSingleton = OrderSingleton.getInstance()!!
 
+    var cursor = db.query(OrdersTable.TABLE_NAME, null, null, null, null , null, null)
+
+    val indexId = cursor.getColumnIndex(OrdersTable.COLUMN_ID)
+    val indexUserId = cursor.getColumnIndex(OrdersTable.COLUMN_USER_ID)
+    val indexNumber = cursor.getColumnIndex(OrdersTable.COLUMN_NUMBER)
+    val indexCost = cursor.getColumnIndex(OrdersTable.COLUMN_COST)
+
     fun addNewOrder(cost: Int){
-        val cursor = db.rawQuery("SELECT MAX(${OrdersTable.COLUMN_NUMBER}) " +
+        cursor = db.rawQuery("SELECT MAX(${OrdersTable.COLUMN_NUMBER}) " +
                 "FROM ${OrdersTable.TABLE_NAME} " +
                 "WHERE ${OrdersTable.COLUMN_USER_ID} = ?", arrayOf(userProfile.id.toString()))
         cursor.moveToNext()
@@ -38,7 +46,7 @@ class TableOrders(context: Context) {
     }
 
     fun load_in_singleton(){
-        val cursor = db.rawQuery("SELECT * FROM ${OrdersTable.TABLE_NAME} " +
+        cursor = db.rawQuery("SELECT * FROM ${OrdersTable.TABLE_NAME} " +
                 "WHERE ${OrdersTable.COLUMN_USER_ID} = ?", arrayOf(userProfile.id.toString()))
         cursor.moveToFirst()
 
@@ -53,7 +61,7 @@ class TableOrders(context: Context) {
     }
 
     fun deleteFromDB(){
-        var cursor = db.rawQuery("DELETE FROM ${OrdersTable.TABLE_NAME}", null)
+        cursor = db.rawQuery("DELETE FROM ${OrdersTable.TABLE_NAME}", null)
         cursor.moveToFirst()
 
         cursor = db.rawQuery("UPDATE sqlite_sequence " +
@@ -63,10 +71,22 @@ class TableOrders(context: Context) {
     }
 
     fun itemCount(): Int{
-        val cursor = db.rawQuery("SELECT COUNT() FROM ${OrdersTable.TABLE_NAME} " +
+        cursor = db.rawQuery("SELECT COUNT() FROM ${OrdersTable.TABLE_NAME} " +
                 "WHERE ${OrdersTable.COLUMN_USER_ID} = ?", arrayOf(userProfile.id.toString()))
         cursor.moveToFirst()
 
         return cursor.getInt(0)
+    }
+
+    fun tableInfo() {
+        cursor = db.rawQuery("SELECT * FROM ${OrdersTable.TABLE_NAME}", null)
+        cursor.moveToFirst()
+
+        while (!cursor.isAfterLast) {
+            Log.d("TABLEINFO", "${cursor.getInt(indexId)} ${cursor.getString(indexUserId)} " +
+                    "${cursor.getString(indexNumber)} ${cursor.getInt(indexCost)}")
+
+            cursor.moveToNext()
+        }
     }
 }
