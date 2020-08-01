@@ -23,16 +23,22 @@ import com.example.app2.Singletons.UserProfile
 import com.example.app2.Tables.TableUserOrder
 import com.example.app2.Tables.TableMenu
 import com.example.app2.Tables.TableOrders
+import com.google.firebase.FirebaseApp
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.ktx.Firebase
 
 class Menu : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+
+        FirebaseApp.initializeApp(this)
 
 
 //        val tableMenu = TableMenu(this)

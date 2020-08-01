@@ -22,10 +22,10 @@ class ActivitySplashScreen: AppCompatActivity() {
             Thread(Runnable {
                 Thread.sleep(2000)
 
-                if(tableUsers.checkRemember()) {
-                    tableUsers.loadRemember()
-                    startActivity(Intent(this, Menu::class.java))
-                } else
+//                if(tableUsers.checkRemember()) {
+//                    tableUsers.loadRemember()
+//                    startActivity(Intent(this, Menu::class.java))
+//                } else
                     startActivity(Intent(this, ActivityAuthorization::class.java))
                 finish()
             }).start()
