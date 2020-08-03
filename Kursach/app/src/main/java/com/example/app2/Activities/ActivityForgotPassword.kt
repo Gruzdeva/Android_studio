@@ -27,14 +27,14 @@ class ActivityForgotPassword: AppCompatActivity() {
         val login = loginText.text.toString()
         val name = nameText.text.toString()
 
-        if(!tableUsers.checkForgot(login, name)){
-            val toast = Toast.makeText(this, "Не удалось найти пользователя, проверьте информацию или зарегестрируйтесь", Toast.LENGTH_SHORT)
-            toast.setGravity(Gravity.TOP, 0,0)
-            toast.show()
-        } else {
-            val pass = tableUsers.getPass(login, name)
-            yourPassView.text = "Your password:"
-            passwordView.text = pass
-        }
+//        if(!tableUsers.checkForgot(login, name)){
+//            val toast = Toast.makeText(this, "Не удалось найти пользователя, проверьте информацию или зарегестрируйтесь", Toast.LENGTH_SHORT)
+//            toast.setGravity(Gravity.TOP, 0,0)
+//            toast.show()
+//        } else {
+//            val pass = tableUsers.getPass(login, name)
+//            yourPassView.text = "Your password:"
+//            passwordView.text = pass
+//        }
     }
 }

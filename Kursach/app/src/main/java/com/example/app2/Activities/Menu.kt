@@ -21,16 +21,20 @@ import com.example.app2.R
 import com.example.app2.Tables.TableUsers
 import com.example.app2.Singletons.UserProfile
 import com.example.app2.Tables.TableUserOrder
-import com.example.app2.Tables.TableMenu
 import com.example.app2.Tables.TableOrders
 import com.google.firebase.FirebaseApp
-import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 class Menu : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var firebaseAnalytics: FirebaseAnalytics
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,11 +78,11 @@ class Menu : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-    fun log_out(view: View) {
-        val tableUsers = TableUsers(this)
-
-        tableUsers.logOut()
-
+    fun log_out(view: View) { // work in progress
+//        val tableUsers = TableUsers(this)
+//
+//        tableUsers.logOut()
+        Firebase.auth.signOut()
         startActivity(Intent(this, ActivityAuthorization::class.java))// finish add
     }
 
@@ -86,49 +90,107 @@ class Menu : AppCompatActivity() {
         val tableUserOrder = TableUserOrder(this)
         val tableUsers = TableUsers(this)
         val tableOrders = TableOrders(this)
-        var userProfile = UserProfile.getInstance()
+
+        auth = Firebase.auth
+        val db = Firebase.database
+        val dbUsers = db.getReference("Users")
+        val userId = auth.currentUser!!.uid
 
         val cost = tableUserOrder.order_cost()
+        var uPoints = 0
+        var points = 0
 
         if(cost != 0) {
-            if (userProfile.isPointsDeduct){
-                if (cost < userProfile.points){
-                    userProfile.points = userProfile.points - cost
-                    tableUsers.updatePoints(userProfile.points)
-                    userProfile.isPointsDeduct = false
-                } else {
-                    userProfile.points = ((cost - userProfile.points) * 0.05).toInt()
-                    tableUsers.updatePoints(userProfile.points)
+//            if (userProfile.isPointsDeduct){
+//                if (cost < userProfile.points){
+//                    userProfile.points = userProfile.points - cost
+//                    tableUsers.updatePoints(userProfile.points)
+//                    userProfile.isPointsDeduct = false
+//                } else {
+//                    userProfile.points = ((cost - userProfile.points) * 0.05).toInt()
+//                    tableUsers.updatePoints(userProfile.points)
+//
+//                    userProfile.isPointsDeduct = false
+//                }
+//            } else {
+//                userProfile.points = (userProfile.points + cost * 0.05).toInt()
+//                tableUsers.updatePoints(userProfile.points)
+//            }
 
-                    userProfile.isPointsDeduct = false
+            dbUsers.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    // This method is called once with the initial value and again
+                    // whenever data at this location is updated.
+
+                    uPoints = dataSnapshot.child(userId).child("points").getValue(Int::class.java)?.toInt()!!
+                    points = uPoints?.plus(cost * 0.05).toInt()
+
+                    Log.d("POINTS", uPoints.toString())
                 }
-            } else {
-                userProfile.points = (userProfile.points + cost * 0.05).toInt()
-                tableUsers.updatePoints(userProfile.points)
-            }
+                override fun onCancelled(error: DatabaseError) {
+                    // Failed to read value
+                    Toast.makeText(this@Menu, "Ошибка загрузки данных" ,
+                        Toast.LENGTH_SHORT).show()
+                }
+
+            })
+            dbUsers.child(userId).child("points").setValue(points)
 
             val toast = Toast.makeText(this, "Заказ принят", Toast.LENGTH_SHORT)
             toast.setGravity(Gravity.TOP, 0, 0)
             toast.show()
 
             tableUserOrder.delete_db_data()
-            tableOrders.addNewOrder(cost)
+            //tableOrders.addNewOrder(cost)
         } else {
             val toast = Toast.makeText(this, "Корзина пуста", Toast.LENGTH_SHORT)
             toast.setGravity(Gravity.TOP, 0, 0)
             toast.show()
         }
+
+//        if(cost != 0) {
+//            if (userProfile.isPointsDeduct){
+//                if (cost < userProfile.points){
+//                    userProfile.points = userProfile.points - cost
+//                    tableUsers.updatePoints(userProfile.points)
+//                    userProfile.isPointsDeduct = false
+//                } else {
+//                    userProfile.points = ((cost - userProfile.points) * 0.05).toInt()
+//                    tableUsers.updatePoints(userProfile.points)
+//
+//                    userProfile.isPointsDeduct = false
+//                }
+//            } else {
+//                userProfile.points = (userProfile.points + cost * 0.05).toInt()
+//                tableUsers.updatePoints(userProfile.points)
+//            }
+//
+//            val toast = Toast.makeText(this, "Заказ принят", Toast.LENGTH_SHORT)
+//            toast.setGravity(Gravity.TOP, 0, 0)
+//            toast.show()
+//
+//            tableUserOrder.delete_db_data()
+//            tableOrders.addNewOrder(cost)
+//        } else {
+//            val toast = Toast.makeText(this, "Корзина пуста", Toast.LENGTH_SHORT)
+//            toast.setGravity(Gravity.TOP, 0, 0)
+//            toast.show()
+//        }
     }
 
     fun deduct_points(view: View) {
-        val tableUserOrder = TableUserOrder(this)
-        val costView: TextView = this.findViewById(R.id.cart_cost)
-        val userProfile = UserProfile.getInstance()
-        val cost = tableUserOrder.order_cost()
+        val toast = Toast.makeText(this, "Функция в разработке", Toast.LENGTH_SHORT)
+            toast.setGravity(Gravity.TOP, 0, 0)
+            toast.show()
 
-        userProfile.isPointsDeduct = true
-
-        if (cost < userProfile.points) costView.text = "0"
-        else costView.text = "COST: ${cost - userProfile.points}"
+//        val tableUserOrder = TableUserOrder(this)
+//        val costView: TextView = this.findViewById(R.id.cart_cost)
+//        val userProfile = UserProfile.getInstance()
+//        val cost = tableUserOrder.order_cost()
+//
+//        userProfile.isPointsDeduct = true
+//
+//        if (cost < userProfile.points) costView.text = "0"
+//        else costView.text = "COST: ${cost - userProfile.points}"
     }
 }

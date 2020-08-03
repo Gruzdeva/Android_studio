@@ -4,7 +4,6 @@ class UserProfile {
     var id = 0
     var login = String()
     var name = String()
-    var password = String()
     var points = 0
     var isPointsDeduct = false
 

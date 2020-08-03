@@ -18,6 +18,7 @@ import com.google.firebase.ktx.Firebase
 
 class ActivityAuthorization : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -32,46 +33,37 @@ class ActivityAuthorization : AppCompatActivity() {
     }
 
     fun login_now(view: View) {
-        val tableUsers = TableUsers(this)
         var userProfile = UserProfile.getNewObject()
 
-        val loginText: EditText = findViewById(R.id.login_auth)
+        val emailText: EditText = findViewById(R.id.login_auth)
         val passwordText: EditText = findViewById(R.id.password_auth)
 
-        val login = loginText.text.toString()
+        val email = emailText.text.toString()
         val password = passwordText.text.toString()
 
+        //Initialize Firebase Auth
         auth = Firebase.auth
-        auth.signInWithEmailAndPassword(login, password)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    val user = auth.currentUser
-                    userProfile.login = user?.displayName.toString()
-                    startActivity(Intent(this, Menu::class.java))
-                } else {
-                    // If sign in fails, display a message to the user.
-                    Toast.makeText(baseContext, "Ошибка авторизации.",
-                        Toast.LENGTH_SHORT).show()
-                    // ...
-                }
 
-                // ...
-            }
-//        if (!tableUsers.checkProfile(login, password)){
-//            val toast =  Toast.makeText(this, "Логин или пароль неправильные, проверьте данные", Toast.LENGTH_SHORT)
-//            toast.setGravity(Gravity.TOP, 0, 0)
-//            toast.show()
-//        } else {
-//            userProfile.login = login
-//            userProfile.password = password
-//
-//            tableUsers.signIn(login, password)
-//            tableUsers.close()
-//
-//            startActivity(Intent(this, Menu::class.java))
-//        }
-
+       if (email == "" || password == "") {
+           Toast.makeText(baseContext, "Заполните все поля!",
+               Toast.LENGTH_SHORT).show()
+       } else {
+           auth.signInWithEmailAndPassword(email, password)
+               .addOnCompleteListener(this) { task ->
+                   if (task.isSuccessful) {
+                       // Sign in success, update UI with the signed-in user's information
+                       val user = auth.currentUser
+                       userProfile.login = user?.displayName.toString()
+                       startActivity(Intent(this, Menu::class.java))
+                   } else {
+                       // If sign in fails, display a message to the user.
+                       Toast.makeText(
+                           baseContext, "Ошибка авторизации.",
+                           Toast.LENGTH_SHORT
+                       ).show()
+                   }
+               }
+       }
     }
 
     fun delete(view: View) {

@@ -45,7 +45,6 @@ class TableUsers(context: Context) {
         val values = ContentValues().apply {
             put(UserTable.COLUMN_LOGIN, userProfile.login)
             put(UserTable.COLUMN_NAME, userProfile.name)
-            put(UserTable.COLUMN_PASSWORD, userProfile.password)
             put(UserTable.COLUMN_POINTS, userProfile.points)
         }
 
@@ -107,7 +106,6 @@ class TableUsers(context: Context) {
         userProfile.id = cursor.getInt(indexId)
         userProfile.login = cursor.getString(indexLogin)
         userProfile.name = cursor.getString(indexName)
-        userProfile.password = cursor.getString(indexPassword)
         userProfile.points = cursor.getInt(indexPoints)
 
         cursor.close()
