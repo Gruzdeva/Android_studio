@@ -1,24 +1,19 @@
 package com.example.app2.Fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.app2.DataClasses.User
 import com.example.app2.R
-import com.example.app2.Singletons.UserProfile
-import com.example.app2.Tables.TableUsers
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
-import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 
 class AccountFragment: Fragment() {
@@ -37,8 +32,6 @@ class AccountFragment: Fragment() {
         val db = Firebase.database
         val dbUsers = db.getReference("Users")
 
-        val nameView: TextView = root.findViewById(R.id.name_of_account)
-        val pointsView: TextView = root.findViewById(R.id.points_acc)
 
         auth = Firebase.auth
         // Read from the database
@@ -50,8 +43,8 @@ class AccountFragment: Fragment() {
 
                 val name = dataSnapshot.child(userId).child("name").getValue(String::class.java).toString()
                 val points = dataSnapshot.child(userId).child("points").getValue(Long::class.java).toString()
-                nameView.text = name
-                pointsView.text = "Points: $points"
+
+                updateUI(root, name, points)
             }
             override fun onCancelled(error: DatabaseError) {
                 // Failed to read value
@@ -60,5 +53,13 @@ class AccountFragment: Fragment() {
             }
         })
         return root
+    }
+
+    private fun updateUI(root: View, name: String, points: String) {
+        val nameView: TextView = root.findViewById(R.id.name_of_account)
+        val pointsView: TextView = root.findViewById(R.id.points_acc)
+
+        nameView.text = name
+        pointsView.text = "Points: $points"
     }
 }

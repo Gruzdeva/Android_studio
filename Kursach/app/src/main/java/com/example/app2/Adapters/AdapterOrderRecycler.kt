@@ -14,11 +14,11 @@ class AdapterOrderRecycler(context: Context, size: Int): RecyclerView.Adapter<Ad
     var size = size
 
     class VHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val number: TextView = itemView.findViewById(R.id.number_order)
+        val number: TextView = itemView.findViewById(R.id.date_order)
         val cost: TextView = itemView.findViewById(R.id.cost_order)
 
         fun bind(singleton: OrderSingleton, position: Int){
-            number.text = singleton.numbers[position].toString()
+            number.text = singleton.dates[position].toString()
             cost.text = singleton.costs[position].toString()
         }
     }

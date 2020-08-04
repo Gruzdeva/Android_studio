@@ -51,13 +51,13 @@ class TableOrders(context: Context) {
         cursor.moveToFirst()
 
         var i = 0
-        while(!cursor.isAfterLast){
-            orderSingleton.numbers[i] = cursor.getInt(2)
-            orderSingleton.costs[i] = cursor.getInt(3)
-
-            i++
-            cursor.moveToNext()
-        }
+//        while(!cursor.isAfterLast){
+//            orderSingleton.dates[i] = cursor.getInt(2)
+//            orderSingleton.costs[i] = cursor.getInt(3)
+//
+//            i++
+//            cursor.moveToNext()
+//        }
     }
 
     fun deleteFromDB(){

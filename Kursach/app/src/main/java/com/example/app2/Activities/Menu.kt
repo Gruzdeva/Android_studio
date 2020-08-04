@@ -6,7 +6,6 @@ import android.util.Log
 import android.view.Gravity
 import android.view.Menu
 import android.view.View
-import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -17,11 +16,9 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.example.app2.DataClasses.Orders
 import com.example.app2.R
-import com.example.app2.Tables.TableUsers
-import com.example.app2.Singletons.UserProfile
 import com.example.app2.Tables.TableUserOrder
-import com.example.app2.Tables.TableOrders
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -30,11 +27,14 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import java.text.SimpleDateFormat
+import java.util.*
 
 class Menu : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var auth: FirebaseAuth
+    val format = SimpleDateFormat("dd.MM.yyyy kk.mm")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -88,43 +88,27 @@ class Menu : AppCompatActivity() {
 
     fun pay_for_order(view: View) {
         val tableUserOrder = TableUserOrder(this)
-        val tableUsers = TableUsers(this)
-        val tableOrders = TableOrders(this)
 
         auth = Firebase.auth
+        val userId = auth.currentUser!!.uid
+
         val db = Firebase.database
         val dbUsers = db.getReference("Users")
-        val userId = auth.currentUser!!.uid
+        val dbOrders = db.getReference("Orders")
 
         val cost = tableUserOrder.order_cost()
         var uPoints = 0
         var points = 0
-
         if(cost != 0) {
-//            if (userProfile.isPointsDeduct){
-//                if (cost < userProfile.points){
-//                    userProfile.points = userProfile.points - cost
-//                    tableUsers.updatePoints(userProfile.points)
-//                    userProfile.isPointsDeduct = false
-//                } else {
-//                    userProfile.points = ((cost - userProfile.points) * 0.05).toInt()
-//                    tableUsers.updatePoints(userProfile.points)
-//
-//                    userProfile.isPointsDeduct = false
-//                }
-//            } else {
-//                userProfile.points = (userProfile.points + cost * 0.05).toInt()
-//                tableUsers.updatePoints(userProfile.points)
-//            }
 
-            dbUsers.addValueEventListener(object : ValueEventListener {
+            dbUsers.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     // This method is called once with the initial value and again
                     // whenever data at this location is updated.
 
                     uPoints = dataSnapshot.child(userId).child("points").getValue(Int::class.java)?.toInt()!!
                     points = uPoints?.plus(cost * 0.05).toInt()
-
+                    dbUsers.child(userId).child("points").setValue(points)
                     Log.d("POINTS", uPoints.toString())
                 }
                 override fun onCancelled(error: DatabaseError) {
@@ -134,48 +118,31 @@ class Menu : AppCompatActivity() {
                 }
 
             })
-            dbUsers.child(userId).child("points").setValue(points)
 
             val toast = Toast.makeText(this, "Заказ принят", Toast.LENGTH_SHORT)
             toast.setGravity(Gravity.TOP, 0, 0)
             toast.show()
 
             tableUserOrder.delete_db_data()
-            //tableOrders.addNewOrder(cost)
+
+            val key = dbOrders.push().key
+            val date = format.format(Date())
+            val order = Orders(userId, date, cost)
+
+            val orderValues = order.toMap()
+
+            val childUpdates = hashMapOf<String, Any>(
+                "/all-orders/$key" to orderValues,
+                "/user-orders/$userId/$key" to orderValues
+            )
+
+            dbOrders.updateChildren(childUpdates)
         } else {
             val toast = Toast.makeText(this, "Корзина пуста", Toast.LENGTH_SHORT)
             toast.setGravity(Gravity.TOP, 0, 0)
             toast.show()
         }
 
-//        if(cost != 0) {
-//            if (userProfile.isPointsDeduct){
-//                if (cost < userProfile.points){
-//                    userProfile.points = userProfile.points - cost
-//                    tableUsers.updatePoints(userProfile.points)
-//                    userProfile.isPointsDeduct = false
-//                } else {
-//                    userProfile.points = ((cost - userProfile.points) * 0.05).toInt()
-//                    tableUsers.updatePoints(userProfile.points)
-//
-//                    userProfile.isPointsDeduct = false
-//                }
-//            } else {
-//                userProfile.points = (userProfile.points + cost * 0.05).toInt()
-//                tableUsers.updatePoints(userProfile.points)
-//            }
-//
-//            val toast = Toast.makeText(this, "Заказ принят", Toast.LENGTH_SHORT)
-//            toast.setGravity(Gravity.TOP, 0, 0)
-//            toast.show()
-//
-//            tableUserOrder.delete_db_data()
-//            tableOrders.addNewOrder(cost)
-//        } else {
-//            val toast = Toast.makeText(this, "Корзина пуста", Toast.LENGTH_SHORT)
-//            toast.setGravity(Gravity.TOP, 0, 0)
-//            toast.show()
-//        }
     }
 
     fun deduct_points(view: View) {
