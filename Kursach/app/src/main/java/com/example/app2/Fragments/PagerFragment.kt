@@ -34,7 +34,7 @@ class PagerFragment: Fragment() {
 
         arguments?.let {
             category = arguments.getInt(CATEGORY)
-            Log.d("CATEGORY", category.toString())
+            Log.d("CATEGORYF", category.toString())
         }
 
         tableMenu.loadFromDB(category)

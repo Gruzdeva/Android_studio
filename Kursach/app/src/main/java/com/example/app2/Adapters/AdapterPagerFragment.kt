@@ -20,7 +20,8 @@ class AdapterPagerFragment(fm: FragmentManager, context: Context, size: Int)
         val arguments = Bundle()
 
         arguments.putInt(CATEGORY, position + 1)
-        //позиция не всегда передается, или не всегда берется из аргументов, аааааааааааааааааааааааааааа
+        Log.d("CATEGORYA", position.toString())
+        //позиция не всегда берется из аргументов, аааааааааааааааааааааааааааа
         val pagerFrag = PagerFragment()
         pagerFrag.arguments = arguments
 

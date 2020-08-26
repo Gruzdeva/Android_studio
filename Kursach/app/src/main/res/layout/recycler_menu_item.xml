@@ -9,7 +9,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="50dp"
-        android:src="@drawable/icon_food" />
+        android:src="@drawable/krevetki" />
 
     <TextView
         android:id="@+id/name_recycler"

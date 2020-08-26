@@ -2,10 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6866055-32a8-42c6-b7e9-da1936264062" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Solnyshko.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Solnyshko.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/bread.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/bread2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/krevetki.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/soup.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/soup2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/soup3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/soup4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/soup5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/soup6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/soup7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Activities/Menu.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Activities/Menu.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Adapters/AdapterPagerFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Adapters/AdapterPagerFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Fragments/CartFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Fragments/CartFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Fragments/PagerFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Fragments/PagerFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Singletons/MenuSingleton.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Singletons/MenuSingleton.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/layout/recycler_menu_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Kursach/app/src/main/res/layout/recycler_menu_item.xml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,20 +28,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1bcXDJKEKY2rsMl5DDeHiIbHxlI" />
-  <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Kursach" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Kursach" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -55,5 +62,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="267" y="295" key="FileChooserDialogImpl" timestamp="1598435919086">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="267" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1598435919086" />
   </component>
 </project>

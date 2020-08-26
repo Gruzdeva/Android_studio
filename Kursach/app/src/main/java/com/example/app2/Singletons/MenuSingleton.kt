@@ -1,9 +1,9 @@
 package com.example.app2.Singletons
 
 class MenuSingleton {
-    var name: Array<String?> = arrayOfNulls(20)
-    var description: Array<String?> = arrayOfNulls(20)
-    var price: Array<Int?> = arrayOfNulls(20)
+    var name: Array<String?> = arrayOfNulls(42)
+    var description: Array<String?> = arrayOfNulls(42)
+    var price: Array<Int?> = arrayOfNulls(42)
 
     companion object{
         private var instance = MenuSingleton()
@@ -11,9 +11,9 @@ class MenuSingleton {
             if (instance == null) {
                 instance =
                     MenuSingleton()
-                instance.name = arrayOfNulls(20)
-                instance.description = arrayOfNulls(20)
-                instance.price = arrayOfNulls(20)
+                instance.name = arrayOfNulls(42)
+                instance.description = arrayOfNulls(42)
+                instance.price = arrayOfNulls(42)
             }
             return instance
         }

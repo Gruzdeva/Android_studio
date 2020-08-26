@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.Gravity
 import android.view.Menu
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -18,6 +19,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.app2.DataClasses.Orders
 import com.example.app2.R
+import com.example.app2.Singletons.MenuSingleton
+import com.example.app2.Singletons.UserProfile
 import com.example.app2.Tables.TableUserOrder
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
@@ -34,7 +37,13 @@ class Menu : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var auth: FirebaseAuth
-    val format = SimpleDateFormat("dd.MM.yyyy kk.mm")
+    private val format = SimpleDateFormat("dd.MM.yyyy kk.mm")
+
+    val userprofile = UserProfile.getInstance()
+
+    val db = Firebase.database
+    private val dbUsers = db.getReference("Users")
+    private val dbOrders = db.getReference("Orders")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,9 +53,6 @@ class Menu : AppCompatActivity() {
 
         FirebaseApp.initializeApp(this)
 
-
-//        val tableMenu = TableMenu(this)
-//        tableMenu.loadFromDB()
         val tableUserOrder = TableUserOrder(this)
         tableUserOrder.delete_db_data()
 
@@ -78,12 +84,9 @@ class Menu : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-    fun log_out(view: View) { // work in progress
-//        val tableUsers = TableUsers(this)
-//
-//        tableUsers.logOut()
+    fun log_out(view: View) {
         Firebase.auth.signOut()
-        startActivity(Intent(this, ActivityAuthorization::class.java))// finish add
+        startActivity(Intent(this, ActivityAuthorization::class.java))
     }
 
     fun pay_for_order(view: View) {
@@ -92,29 +95,26 @@ class Menu : AppCompatActivity() {
         auth = Firebase.auth
         val userId = auth.currentUser!!.uid
 
-        val db = Firebase.database
-        val dbUsers = db.getReference("Users")
-        val dbOrders = db.getReference("Orders")
-
         val cost = tableUserOrder.order_cost()
         var uPoints = 0
-        var points = 0
-        if(cost != 0) {
 
+        if(cost != 0) {
             dbUsers.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     // This method is called once with the initial value and again
                     // whenever data at this location is updated.
 
-                    uPoints = dataSnapshot.child(userId).child("points").getValue(Int::class.java)?.toInt()!!
-                    points = uPoints?.plus(cost * 0.05).toInt()
-                    dbUsers.child(userId).child("points").setValue(points)
-                    Log.d("POINTS", uPoints.toString())
+                    uPoints =
+                        dataSnapshot.child(userId).child("points").getValue(Int::class.java)
+                            ?.toInt()!!
+                    updateUI(uPoints, cost, userId)
                 }
+
                 override fun onCancelled(error: DatabaseError) {
                     // Failed to read value
-                    Toast.makeText(this@Menu, "Ошибка загрузки данных" ,
-                        Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@Menu, "Ошибка загрузки данных",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
 
             })
@@ -145,19 +145,60 @@ class Menu : AppCompatActivity() {
 
     }
 
-    fun deduct_points(view: View) {
-        val toast = Toast.makeText(this, "Функция в разработке", Toast.LENGTH_SHORT)
-            toast.setGravity(Gravity.TOP, 0, 0)
-            toast.show()
+    private fun updateUI(uPoints: Int, cost: Int, userId: String) {
+        val dbPoint = dbUsers.child(userId).child("points")
+        var points = 0
+        //Проверки для вычисления количества баллов
+        if (userprofile.isPointsDeduct){
+            if (cost < uPoints) {
+                points = uPoints - cost
+                dbPoint.setValue(points)
+                Log.d("UPOINTS<", points.toString())
+                userprofile.isPointsDeduct = false
+            } else {
+                points = ((cost - uPoints) * 0.05).toInt()
+                dbPoint.setValue(points)
+                Log.d("UPOINTS>", points.toString())
+                userprofile.isPointsDeduct = false
+            }
 
-//        val tableUserOrder = TableUserOrder(this)
-//        val costView: TextView = this.findViewById(R.id.cart_cost)
-//        val userProfile = UserProfile.getInstance()
-//        val cost = tableUserOrder.order_cost()
-//
-//        userProfile.isPointsDeduct = true
-//
-//        if (cost < userProfile.points) costView.text = "0"
-//        else costView.text = "COST: ${cost - userProfile.points}"
+        } else {
+            points = uPoints.plus(cost * 0.05).toInt()
+            dbPoint.setValue(points)
+        }
+    }
+
+    fun deduct_points(view: View) {
+        val tableUserOrder = TableUserOrder(this)
+        val cost = tableUserOrder.order_cost()
+        val costView: TextView = this.findViewById(R.id.cart_cost)
+
+        userprofile.isPointsDeduct = true
+        val userId = auth.currentUser!!.uid
+
+        dbUsers.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+
+                val points =
+                    dataSnapshot.child(userId).child("points").getValue(Int::class.java)
+                        ?.toInt()!!
+                updateUI_Cost(points, cost, costView)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Failed to read value
+                Toast.makeText(this@Menu, "Ошибка загрузки данных",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
+        })
+    }
+
+    private fun updateUI_Cost(points: Int, cost: Int, costView: TextView) {
+        if (cost < points) costView.text = "0"
+        else costView.text = "COST: ${cost - points}"
     }
 }
