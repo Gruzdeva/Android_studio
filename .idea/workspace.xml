@@ -6,302 +6,28 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="CATEGORY" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="TABLEINFO" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="059740d7-83fc-4d5a-9bfb-740960e1617b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/google-services.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/app2/ExampleInstrumentedTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Menu.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/ic_launcher-playstore.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivityAuthorization.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivityForgotPassword.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivityRegistration.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivitySplashScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/Menu.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Adapters/AdapterCartRecycler.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Adapters/AdapterOrderRecycler.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Adapters/AdapterPagerFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Adapters/AdapterRecycler.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DBHelpers/DBHelperAllOrders.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DBHelpers/DBHelperMenu.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DBHelpers/DBHelperUserOrder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DBHelpers/DBHelperUsers.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DBHelpers/DBReader.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DataClasses/Orders.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DataClasses/User.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DataLoaders/OrderLoader.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Fragments/AccountFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Fragments/CartFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Fragments/MenuFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Fragments/OrderFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Fragments/PagerFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Singletons/MenuSingleton.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Singletons/OrderSingleton.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Singletons/UserProfile.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Tables/TableMenu.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Tables/TableOrders.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Tables/TableUserOrder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Tables/TableUsers.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v21/ic_menu_camera.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v21/ic_menu_gallery.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v21/ic_menu_slideshow.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/activ.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/activ2.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/activ3.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/bread.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/bread2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/fon1.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/fon2.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/food2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/gradient.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/krevetki.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/soup.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/soup2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/soup3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/soup4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/soup5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/soup6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/soup7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_account.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_account_press.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_account_solid.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_login.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/btn_bg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/btn_bg_press.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/btn_bg_solid.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/btn_forgot.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/dont_account.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/et_bg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/fon_account.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/history.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_account_circle_black_24dp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_restaurant_menu_black_24dp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_room_service_black_24dp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_shopping_cart_black_24dp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon_food.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/log_forgot.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/pay.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/recycler.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/recycler_2.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/remove_press.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/side_nav_bar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/table.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_forgot_password.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_menu.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_registration.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/app_bar_menu.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_menu.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_account.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_cart.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_menu.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_menu_pager.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_orders.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_menu.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/order_layout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/recycler_cart_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/recycler_menu_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/recycler_order_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/activity_menu_drawer.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/drawables.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/example/app2/ExampleUnitTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Solnyshko.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DataClasses/OrderUser.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/google-services.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/androidTest/java/com/example/app2/ExampleInstrumentedTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/assets/Menu.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/ic_launcher-playstore.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Activities/ActivityAuthorization.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Activities/ActivityForgotPassword.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Activities/ActivityRegistration.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Activities/ActivitySplashScreen.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Activities/Menu.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Adapters/AdapterCartRecycler.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Adapters/AdapterOrderRecycler.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Adapters/AdapterPagerFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Adapters/AdapterRecycler.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/DBHelpers/DBHelperAllOrders.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/DBHelpers/DBHelperMenu.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/DBHelpers/DBHelperUserOrder.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/DBHelpers/DBHelperUsers.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/DBHelpers/DBReader.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/DataClasses/Orders.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/DataClasses/User.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/DataLoaders/OrderLoader.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Fragments/AccountFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Fragments/CartFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Fragments/MenuFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Fragments/OrderFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Fragments/PagerFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Singletons/MenuSingleton.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Singletons/OrderSingleton.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Singletons/UserProfile.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Tables/TableMenu.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Tables/TableOrders.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Tables/TableUserOrder.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/java/com/example/app2/Tables/TableUsers.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v21/ic_menu_camera.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v21/ic_menu_gallery.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v21/ic_menu_slideshow.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/activ.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/activ2.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/activ3.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/bread.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/bread2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/fon1.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/fon2.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/food2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/gradient.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/krevetki.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/soup.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/soup2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/soup3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/soup4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/soup5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/soup6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable-v24/soup7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/bg_account.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/bg_account_press.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/bg_account_solid.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/bg_login.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/btn_bg.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/btn_bg_press.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/btn_bg_solid.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/btn_forgot.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/dont_account.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/et_bg.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/fon_account.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/history.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/ic_account_circle_black_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/ic_restaurant_menu_black_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/ic_room_service_black_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/ic_shopping_cart_black_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/icon_food.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/log_forgot.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/pay.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/recycler.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/recycler_2.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/remove_press.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/side_nav_bar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/drawable/table.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/layout/activity_forgot_password.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/layout/activity_menu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/layout/activity_registration.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/layout/activity_splash.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/layout/app_bar_menu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/layout/content_menu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/layout/fragment_account.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/layout/fragment_cart.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/layout/fragment_menu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/layout/fragment_menu_pager.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/layout/fragment_orders.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/layout/nav_header_menu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/layout/recycler_cart_item.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/layout/recycler_menu_item.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/layout/recycler_order_item.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/menu/activity_menu_drawer.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/menu/menu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/navigation/mobile_navigation.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/values-v21/styles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/values/dimens.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/values/drawables.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/values/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/main/res/values/styles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/app/src/test/java/com/example/app2/ExampleUnitTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kursach/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/Menu.db" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/Menu.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivityAuthorization.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivityAuthorization.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivityForgotPassword.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivityForgotPassword.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivityRegistration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivityRegistration.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivitySplashScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivitySplashScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/Menu.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/Menu.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DataLoaders/OrderLoader.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DataLoaders/OrderLoader.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Fragments/OrderFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Fragments/OrderFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Fragments/PagerFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Fragments/PagerFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Tables/TableMenu.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Tables/TableOrders.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Tables/TableUserOrder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Tables/TableUserOrder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Tables/TableUsers.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/order_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/order_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -324,8 +50,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Class" />
         <option value="layoutResourceFile" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -504,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598435991437</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="upd: start work with order dialog">
+      <created>1602168021176</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1602168021177</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -515,6 +248,26 @@
             <State>
               <option name="COLUMN_ORDER" />
             </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
@@ -533,7 +286,8 @@
     <MESSAGE value="upd: auth working, work with updating points" />
     <MESSAGE value="upd: added order history" />
     <MESSAGE value="upd: new points" />
-    <option name="LAST_COMMIT_MESSAGE" value="upd: new points" />
+    <MESSAGE value="upd: start work with order dialog" />
+    <option name="LAST_COMMIT_MESSAGE" value="upd: start work with order dialog" />
   </component>
   <component name="WindowStateProjectService">
     <state x="477" y="272" key="#PSD" timestamp="1596108095408">
@@ -560,10 +314,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="756" y="420" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1920.1080@0.0.1920.1080" timestamp="1594719554595" />
-    <state x="690" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596188387321">
+    <state x="690" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602336242426">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="690" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1596188387321" />
+    <state x="690" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1602336242426" />
     <state x="739" y="192" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1594719575263">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -576,38 +330,38 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="794" y="353" key="AndroidCreateXmlResourceDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1602166703687" />
-    <state x="613" y="134" key="CommitChangelistDialog2" timestamp="1598435989031">
+    <state x="613" y="134" key="CommitChangelistDialog2" timestamp="1602167997545">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="613" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1598435989031" />
+    <state x="613" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1602167997545" />
     <state x="740" y="281" key="FileChooserDialogImpl" timestamp="1602162788422">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="281" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1602162788422" />
-    <state width="1877" height="292" key="GridCell.Tab.0.bottom" timestamp="1602167608542">
+    <state width="1877" height="237" key="GridCell.Tab.0.bottom" timestamp="1602336208082">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1602167608542" />
-    <state width="1877" height="292" key="GridCell.Tab.0.center" timestamp="1602167608542">
+    <state width="1877" height="237" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1602336208082" />
+    <state width="1877" height="237" key="GridCell.Tab.0.center" timestamp="1602336208082">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1602167608542" />
-    <state width="1877" height="292" key="GridCell.Tab.0.left" timestamp="1602167608542">
+    <state width="1877" height="237" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1602336208082" />
+    <state width="1877" height="237" key="GridCell.Tab.0.left" timestamp="1602336208082">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1602167608542" />
-    <state width="1877" height="292" key="GridCell.Tab.0.right" timestamp="1602167608542">
+    <state width="1877" height="237" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1602336208082" />
+    <state width="1877" height="237" key="GridCell.Tab.0.right" timestamp="1602336208082">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1602167608542" />
+    <state width="1877" height="237" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1602336208082" />
     <state x="461" y="182" key="SettingsEditor" timestamp="1602162318399">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="461" y="182" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1602162318399" />
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1598435995613">
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1602168041026">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1598435995613" />
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1602168041026" />
     <state x="100" y="100" width="1720" height="880" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1596103710522">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

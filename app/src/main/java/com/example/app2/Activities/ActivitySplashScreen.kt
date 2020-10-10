@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.app2.R
-import com.example.app2.Tables.TableUsers
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -24,7 +23,6 @@ class ActivitySplashScreen: AppCompatActivity() {
 
         auth = Firebase.auth
 
-        val tableUsers = TableUsers(this)
         if(!flag){
             Thread(Runnable {
                 Thread.sleep(2000)

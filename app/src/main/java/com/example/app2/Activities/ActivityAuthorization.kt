@@ -3,15 +3,11 @@ package com.example.app2.Activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Gravity
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import com.example.app2.*
 import com.example.app2.Singletons.UserProfile
-import com.example.app2.Tables.TableUsers
-import com.example.app2.Tables.TableOrders
-import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -64,16 +60,6 @@ class ActivityAuthorization : AppCompatActivity() {
                    }
                }
        }
-    }
-
-    fun delete(view: View) {
-        val tableUsers = TableUsers(this)
-        val tableOrders = TableOrders(this)
-        tableUsers.deleteFromTable()
-        tableOrders.deleteFromDB()
-
-        val toast = Toast.makeText(this, "DELETE", Toast.LENGTH_SHORT)
-        toast.show()
     }
 }
 

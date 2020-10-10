@@ -1,14 +1,11 @@
 package com.example.app2.Activities
 
 import android.os.Bundle
-import android.view.Gravity
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.app2.R
-import com.example.app2.Tables.TableUsers
 
 class ActivityForgotPassword: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +14,6 @@ class ActivityForgotPassword: AppCompatActivity() {
     }
 
     fun checkPass(view: View) {
-        val tableUsers = TableUsers(this)
 
         val loginText: EditText = findViewById(R.id.login_forgot)
         val nameText: EditText = findViewById(R.id.name_forgot)

@@ -6,6 +6,9 @@ import android.util.Log
 import com.example.app2.DBHelpers.DBReader.UserOrderTable
 import com.example.app2.Singletons.UserProfile
 import com.example.app2.DBHelpers.DBHelperUserOrder
+import com.example.app2.DataClasses.OrderUser
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class TableUserOrder(context: Context) {
     private val dbHelper =
@@ -14,12 +17,12 @@ class TableUserOrder(context: Context) {
 
     var cursor = db.query(UserOrderTable.TABLE_NAME, null, null, null, null , null, null)
 
-    val indexId = cursor.getColumnIndex(UserOrderTable.COLUMN_ID)
-    val indexName = cursor.getColumnIndex(UserOrderTable.COLUMN_NAME)
-    val indexPrice = cursor.getColumnIndex(UserOrderTable.COLUMN_PRICE)
+    private val indexId = cursor.getColumnIndex(UserOrderTable.COLUMN_ID)
+    private val indexName = cursor.getColumnIndex(UserOrderTable.COLUMN_NAME)
+    private val indexPrice = cursor.getColumnIndex(UserOrderTable.COLUMN_PRICE)
 
-    val userProfile = UserProfile.getInstance()
-
+    val firebaseDB = Firebase.database
+    val dbOrder = firebaseDB.getReference("Orders/order-info")
     fun add_position(name: String, price: Int){
         val cv = ContentValues().apply {
             put(UserOrderTable.COLUMN_NAME, name)
@@ -72,7 +75,7 @@ class TableUserOrder(context: Context) {
 
         delete_db_data()
 
-        for (x in 0..size - 1){
+        for (x in 0..size - 1) {
             val cv = ContentValues().apply {
                 put(UserOrderTable.COLUMN_NAME, names[x])
                 put(UserOrderTable.COLUMN_PRICE, prices[x])
@@ -82,11 +85,28 @@ class TableUserOrder(context: Context) {
         }
     }
 
+    fun loadInfoIntoDB(key: String) {
+
+        cursor = db.rawQuery("SELECT * FROM ${UserOrderTable.TABLE_NAME}", null)
+        cursor.moveToFirst()
+
+        while (!cursor.isAfterLast) {
+            val name = cursor.getString(indexName)
+            val price = cursor.getInt(indexPrice)
+            val orderUser = OrderUser(name, price)
+            val infoKey = dbOrder.push().key
+
+            dbOrder.child("$key/$infoKey").setValue(orderUser)
+
+            cursor.moveToNext()
+        }
+    }
+
     fun tableInfo(){
         cursor = db.rawQuery("SELECT * FROM ${UserOrderTable.TABLE_NAME}", null)
         cursor.moveToFirst()
 
-        while(!cursor.isAfterLast){
+        while(!cursor.isAfterLast) {
             Log.d("TABLEINFO", "${cursor.getInt(indexId)} " +
                     "${cursor.getString(indexName)} ${cursor.getString(indexPrice)}")
 

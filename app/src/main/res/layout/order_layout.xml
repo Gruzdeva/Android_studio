@@ -18,9 +18,10 @@
             android:textOn="@string/yes"
             android:textOff="@string/no"
             android:textSize="20sp"
-            android:defaultFocusHighlightEnabled="true"
+            android:checked="true"
             android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"/>
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/met_phone_number"

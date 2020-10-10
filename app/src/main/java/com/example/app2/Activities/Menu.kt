@@ -171,54 +171,27 @@ class Menu : AppCompatActivity() {
         else costView.text = "COST: ${cost - points}"
     }
 
+    //функция для открытия диалогового окна
     fun createOrderInfoWindow(cost: Int, tableUserOrder: TableUserOrder) { //надо подумать над реализацией свитча
         val dialog = AlertDialog.Builder(this@Menu)
-        dialog.setTitle("Уточнение информации")
+        dialog.setTitle("     Уточнение информации")
+
 
         val inflater = LayoutInflater.from(this@Menu)
         val orderWindow = inflater.inflate(R.layout.order_layout, null)
         dialog.setView(orderWindow)
 
         val orderSwitch = orderWindow.findViewById<Switch>(R.id.s_order_geo)
-        val met_phone = orderWindow.findViewById<MaterialEditText>(R.id.met_phone_number)
-        val met_address = orderWindow.findViewById<MaterialEditText>(R.id.met_address)
+        val metPhone = orderWindow.findViewById<MaterialEditText>(R.id.met_phone_number)
+        val metAddress = orderWindow.findViewById<MaterialEditText>(R.id.met_address)
 
         orderSwitch?.setOnCheckedChangeListener { buttonView, isChecked ->  //сначала происходит проверка на null затем проверка выбранного ответа, если "нет" отрисовываются поля с номером телефона и адрессом
             if (!isChecked) {
-                met_phone.isVisible = true
-                met_address.isVisible = true
-
-                dialog.setNegativeButton("Отменить", DialogInterface.OnClickListener { dialogInterfaсe, which ->
-                    dialogInterfaсe.dismiss()
-                })
-
-                dialog.setPositiveButton("Подтвердить", DialogInterface.OnClickListener { dialogInterdace, which ->
-                    when {
-                        TextUtils.isEmpty(met_phone.text) -> {
-                            val toast = Toast.makeText(
-                                this@Menu,
-                                "Укажите номер телефона!",
-                                Toast.LENGTH_SHORT
-                            )
-                            toast.setGravity(Gravity.TOP, 0, 0)
-                            toast.show()
-                        }
-
-                        TextUtils.isEmpty(met_address.text) -> {
-                            val toast = Toast.makeText(
-                                this@Menu,
-                                "Укажите адрес!",
-                                Toast.LENGTH_SHORT
-                            )
-                            toast.setGravity(Gravity.TOP, 0, 0)
-                            toast.show()
-                        }
-
-                        else -> {
-                            loadInBD(met_phone.text.toString(), met_address.toString(), cost, tableUserOrder)
-                        }
-                    }
-                })
+                metPhone.isVisible = true
+                metAddress.isVisible = true
+            } else {
+                metPhone.isVisible = false
+                metAddress.isVisible = false
             }
         }
 
@@ -227,12 +200,53 @@ class Menu : AppCompatActivity() {
         })
 
         dialog.setPositiveButton("Подтвердить", DialogInterface.OnClickListener { dialogInterdace, which ->
-            loadInBD("", "", cost, tableUserOrder)
+
+            if (metPhone.isVisible && metAddress.isVisible) {
+                when {
+                    TextUtils.isEmpty(metPhone.text) -> {
+                        val toast = Toast.makeText(
+                            this@Menu,
+                            "Укажите номер телефона!",
+                            Toast.LENGTH_SHORT
+                        )
+                        toast.setGravity(Gravity.TOP, 0, 0)
+                        toast.show()
+                    }
+
+                    TextUtils.isEmpty(metAddress.text) -> {
+                        val toast = Toast.makeText(
+                            this@Menu,
+                            "Укажите адрес!",
+                            Toast.LENGTH_SHORT
+                        )
+                        toast.setGravity(Gravity.TOP, 0, 0)
+                        toast.show()
+                    }
+
+                    else -> {
+                        loadInBD(
+                            metPhone.text.toString(),
+                            metAddress.toString(),
+                            cost,
+                            tableUserOrder
+                        )
+                    }
+                }
+            } else {
+                loadInBD(
+                    metPhone.text.toString(),
+                    metAddress.toString(),
+                    cost,
+                    tableUserOrder
+                )
+            }
         })
 
         dialog.show()
     }
 
+
+    //отправка данных в бд
     fun loadInBD(phone: String, address: String, cost: Int, tableUserOrder: TableUserOrder) {
         var uPoints = 0
         val userId = auth.currentUser!!.uid
@@ -261,7 +275,7 @@ class Menu : AppCompatActivity() {
         toast.setGravity(Gravity.TOP, 0, 0)
         toast.show()
 
-        tableUserOrder.delete_db_data()
+
 
         val key = dbOrders.push().key
         val date = format.format(Date())
@@ -272,6 +286,9 @@ class Menu : AppCompatActivity() {
         val childUpdates = hashMapOf<String, Any>(
             "/user-orders/$userId/$key" to orderValues
         )
+
+        tableUserOrder.loadInfoIntoDB(key!!)
+        tableUserOrder.delete_db_data()
 
         dbOrders.updateChildren(childUpdates)
     }

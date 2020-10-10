@@ -11,10 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app2.R
 import com.example.app2.Adapters.AdapterOrderRecycler
-import com.example.app2.DataClasses.Orders
-import com.example.app2.DataLoaders.OrderLoader
 import com.example.app2.Singletons.OrderSingleton
-import com.example.app2.Tables.TableOrders
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
@@ -22,8 +19,6 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import com.google.gson.Gson
-import java.util.*
 
 class OrderFragment: Fragment() {
     private lateinit var auth: FirebaseAuth
@@ -65,14 +60,6 @@ class OrderFragment: Fragment() {
                     Toast.LENGTH_SHORT).show()
             }
         })
-
-
-
-//        val tableOrders =
-//            TableOrders(activity!!.applicationContext)
-//        tableOrders.load_in_singleton()
-//        val size = tableOrders.itemCount()
-
         return root
     }
 

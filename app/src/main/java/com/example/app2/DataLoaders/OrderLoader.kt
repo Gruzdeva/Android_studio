@@ -20,7 +20,6 @@ class OrderLoader(info: String) : AsyncTask<String, Void, String>() {
             orderSingleton.dates[i] = item.orderDate
             orderSingleton.costs[i] = item.orderPrice
 
-
         }
 
         return "0"
