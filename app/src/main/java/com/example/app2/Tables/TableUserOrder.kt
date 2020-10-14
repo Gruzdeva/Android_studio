@@ -23,6 +23,7 @@ class TableUserOrder(context: Context) {
 
     val firebaseDB = Firebase.database
     val dbOrder = firebaseDB.getReference("Orders/order-info")
+
     fun add_position(name: String, price: Int){
         val cv = ContentValues().apply {
             put(UserOrderTable.COLUMN_NAME, name)
@@ -89,16 +90,22 @@ class TableUserOrder(context: Context) {
 
         cursor = db.rawQuery("SELECT * FROM ${UserOrderTable.TABLE_NAME}", null)
         cursor.moveToFirst()
+        var i = 0
 
         while (!cursor.isAfterLast) {
             val name = cursor.getString(indexName)
             val price = cursor.getInt(indexPrice)
             val orderUser = OrderUser(name, price)
-            val infoKey = dbOrder.push().key
+            val infoKey = i
 
-            dbOrder.child("$key/$infoKey").setValue(orderUser)
+            val orderValues = orderUser.toMap()
+            val childUpdates = hashMapOf<String, Any>(
+                "$key/$infoKey" to orderValues
+            )
+            dbOrder.updateChildren(childUpdates)
 
             cursor.moveToNext()
+            i++
         }
     }
 

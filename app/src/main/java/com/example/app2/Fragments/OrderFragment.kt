@@ -40,17 +40,17 @@ class OrderFragment: Fragment() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                var i = 0
                 val orderSingleton = OrderSingleton.getInstance()!!
-                for (item in dataSnapshot.children) {
+
+                for ((i, item) in dataSnapshot.children.withIndex()) {
+                    orderSingleton.id[i] = item.child("orderId").value as String?
                     orderSingleton.dates[i] = item.child("orderDate").value as String?
                     orderSingleton.costs[i] = item.child("orderPrice").getValue(Int::class.java)
-                    i++
                 }
 
                 val size = dataSnapshot.childrenCount.toInt()
-                val orderInfo = dataSnapshot.value
-                updateUI(orderInfo.toString(), size, myRecycler)
+                Log.e("!?*^", "$dataSnapshot")
+                updateUI(size, myRecycler)
 
             }
 
@@ -63,14 +63,11 @@ class OrderFragment: Fragment() {
         return root
     }
 
-    private fun updateUI(info: String, size: Int, myRecycler: RecyclerView) {
+    private fun updateUI(size: Int, myRecycler: RecyclerView) {
 
         myRecycler.layoutManager = LinearLayoutManager(activity)
         myRecycler.setHasFixedSize(true)
-        Log.d("SINGLETONS", info)
 
-        myRecycler.adapter = AdapterOrderRecycler(
-            activity!!.applicationContext, size
-        )
+        myRecycler.adapter = AdapterOrderRecycler(size)
     }
 }

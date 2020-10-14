@@ -6,35 +6,45 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="TABLEINFO" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="!?*^" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="059740d7-83fc-4d5a-9bfb-740960e1617b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DataClasses/OrderUser.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivityOrderInfo.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Adapters/AdapterOrderInfo.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DataClasses/MenuData.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_order_info.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/recycler_order_info_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/Menu.db" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/Menu.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivityAuthorization.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivityAuthorization.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivityForgotPassword.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivityForgotPassword.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivityRegistration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivityRegistration.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivitySplashScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivitySplashScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/Menu.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/Menu.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DataLoaders/OrderLoader.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DataLoaders/OrderLoader.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Adapters/AdapterOrderRecycler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Adapters/AdapterOrderRecycler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Adapters/AdapterRecycler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Adapters/AdapterRecycler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DataClasses/OrderUser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DataClasses/OrderUser.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DataClasses/Orders.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DataClasses/Orders.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Fragments/OrderFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Fragments/OrderFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Fragments/PagerFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Fragments/PagerFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Tables/TableMenu.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Tables/TableOrders.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Singletons/MenuSingleton.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Singletons/OrderSingleton.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Singletons/OrderSingleton.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Tables/TableUserOrder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Tables/TableUserOrder.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Tables/TableUsers.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/order_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/order_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="XPH0220609003820" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[XPH0220609003820]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -51,6 +61,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="layoutResourceFile" />
+        <option value="layoutResourceFile_vertical" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -67,7 +78,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -112,12 +122,13 @@
       </method>
     </configuration>
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="app" />
+      <module name="App2.app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
       <option name="ARTIFACT_NAME" value="" />
       <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
@@ -153,11 +164,16 @@
       </Native>
       <Profilers>
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
@@ -237,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602168021177</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="upd: menu on firebase, start order info, bug with menu">
+      <created>1602338515242</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1602338515242</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -245,9 +268,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -272,6 +293,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -287,7 +309,8 @@
     <MESSAGE value="upd: added order history" />
     <MESSAGE value="upd: new points" />
     <MESSAGE value="upd: start work with order dialog" />
-    <option name="LAST_COMMIT_MESSAGE" value="upd: start work with order dialog" />
+    <MESSAGE value="upd: menu on firebase, start order info, bug with menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="upd: menu on firebase, start order info, bug with menu" />
   </component>
   <component name="WindowStateProjectService">
     <state x="477" y="272" key="#PSD" timestamp="1596108095408">
@@ -298,14 +321,14 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="295" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1596530248123" />
-    <state x="751" y="256" key="#com.intellij.ide.util.MemberChooser" timestamp="1596532815740">
+    <state x="751" y="256" key="#com.intellij.ide.util.MemberChooser" timestamp="1602696522468">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="751" y="256" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1596532815740" />
-    <state x="640" y="276" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1595413554289">
+    <state x="751" y="256" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1602696522468" />
+    <state x="1166" y="332" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1602690185999">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="640" y="276" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1595413554289" />
+    <state x="1166" y="332" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1602690185999" />
     <state x="594" y="465" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1596453409318">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -322,53 +345,53 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="739" y="192" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1594719575263" />
-    <state x="540" y="295" key="AndroidCreateResourceFileDialog" timestamp="1602163934463">
+    <state x="540" y="295" key="AndroidCreateResourceFileDialog" timestamp="1602694267624">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="540" y="295" key="AndroidCreateResourceFileDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1602163934463" />
-    <state x="794" y="353" key="AndroidCreateXmlResourceDialog" timestamp="1602166703687">
+    <state x="540" y="295" key="AndroidCreateResourceFileDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1602694267624" />
+    <state x="794" y="353" key="AndroidCreateXmlResourceDialog" timestamp="1602694442104">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="794" y="353" key="AndroidCreateXmlResourceDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1602166703687" />
-    <state x="613" y="134" key="CommitChangelistDialog2" timestamp="1602167997545">
+    <state x="794" y="353" key="AndroidCreateXmlResourceDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1602694442104" />
+    <state x="613" y="134" key="CommitChangelistDialog2" timestamp="1602338513092">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="613" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1602167997545" />
+    <state x="613" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1602338513092" />
     <state x="740" y="281" key="FileChooserDialogImpl" timestamp="1602162788422">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="281" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1602162788422" />
-    <state width="1877" height="237" key="GridCell.Tab.0.bottom" timestamp="1602336208082">
+    <state width="1877" height="231" key="GridCell.Tab.0.bottom" timestamp="1602696932228">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="237" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1602336208082" />
-    <state width="1877" height="237" key="GridCell.Tab.0.center" timestamp="1602336208082">
+    <state width="1877" height="231" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1602696932228" />
+    <state width="1877" height="231" key="GridCell.Tab.0.center" timestamp="1602696932228">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="237" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1602336208082" />
-    <state width="1877" height="237" key="GridCell.Tab.0.left" timestamp="1602336208082">
+    <state width="1877" height="231" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1602696932228" />
+    <state width="1877" height="231" key="GridCell.Tab.0.left" timestamp="1602696932227">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="237" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1602336208082" />
-    <state width="1877" height="237" key="GridCell.Tab.0.right" timestamp="1602336208082">
+    <state width="1877" height="231" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1602696932227" />
+    <state width="1877" height="231" key="GridCell.Tab.0.right" timestamp="1602696932228">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="237" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1602336208082" />
+    <state width="1877" height="231" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1602696932228" />
     <state x="461" y="182" key="SettingsEditor" timestamp="1602162318399">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="461" y="182" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1602162318399" />
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1602168041026">
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1602338538489">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1602168041026" />
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1602338538489" />
     <state x="100" y="100" width="1720" height="880" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1596103710522">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="100" y="100" width="1720" height="880" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1596103710522" />
-    <state x="616" y="250" key="run.anything.popup" timestamp="1596539654939">
+    <state x="616" y="250" key="run.anything.popup" timestamp="1602687800597">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="616" y="250" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1596539654939" />
+    <state x="616" y="250" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1602687800597" />
   </component>
 </project>

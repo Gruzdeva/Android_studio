@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.app2">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,8 +25,9 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.app2.Activities.ActivityRegistration"></activity>
-        <activity android:name="com.example.app2.Activities.ActivityForgotPassword"></activity>
+        <activity android:name="com.example.app2.Activities.ActivityRegistration"/>
+        <activity android:name="com.example.app2.Activities.ActivityForgotPassword"/>
+        <activity android:name="com.example.app2.Activities.ActivityOrderInfo"/>
         <activity
             android:name="com.example.app2.Activities.Menu"
             android:label="@string/title_activity_menu"

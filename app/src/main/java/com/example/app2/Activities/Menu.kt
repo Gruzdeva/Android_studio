@@ -25,7 +25,6 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.isVisible
 import com.example.app2.DataClasses.Orders
 import com.example.app2.R
-import com.example.app2.Singletons.MenuSingleton
 import com.example.app2.Singletons.UserProfile
 import com.example.app2.Tables.TableUserOrder
 import com.google.firebase.FirebaseApp
@@ -279,7 +278,7 @@ class Menu : AppCompatActivity() {
 
         val key = dbOrders.push().key
         val date = format.format(Date())
-        val order = Orders(userId, date, cost)
+        val order = Orders(userId, date, cost, key)
 
         val orderValues = order.toMap()
 

@@ -1,20 +1,18 @@
 package com.example.app2.Adapters
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.app2.DataClasses.MenuData
 import com.example.app2.R
 import com.example.app2.Tables.TableUserOrder
-import com.example.app2.Singletons.MenuSingleton
 
-
-class AdapterRecycler(context: Context, size: Int): RecyclerView.Adapter<AdapterRecycler.myVHolder>() {
-    val menuSingleton = MenuSingleton.getInstance()!!
+class AdapterRecycler(size: Int, menuArray: ArrayList<MenuData>): RecyclerView.Adapter<AdapterRecycler.myVHolder>() {
     val size = size
+    val menuArray = menuArray
 
     class myVHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val context = itemView.context
@@ -24,10 +22,11 @@ class AdapterRecycler(context: Context, size: Int): RecyclerView.Adapter<Adapter
         val priceView: TextView = itemView.findViewById(R.id.price_recycler)
         val addBtn: Button = itemView.findViewById(R.id.add_btn)
 
-        fun bind(position: Int, singleton: MenuSingleton){
-            nameView.text = singleton.name[position]
-            priceView.text = singleton.price[position].toString()
-            descriptionView.text = singleton.description[position]
+        fun bind(position: Int, menuArray: ArrayList<MenuData>){
+
+            nameView.text = menuArray[position].name
+            priceView.text = menuArray[position].price.toString()
+            descriptionView.text = menuArray[position].description
 
             addBtn.setOnClickListener{
                 val tableUserOrder =
@@ -54,6 +53,6 @@ class AdapterRecycler(context: Context, size: Int): RecyclerView.Adapter<Adapter
     }
 
     override fun onBindViewHolder(holder: myVHolder, position: Int) {
-        holder.bind(position, menuSingleton)
+        holder.bind(position, menuArray)
     }
 }
