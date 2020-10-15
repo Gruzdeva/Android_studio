@@ -98,11 +98,7 @@ class TableUserOrder(context: Context) {
             val orderUser = OrderUser(name, price)
             val infoKey = i
 
-            val orderValues = orderUser.toMap()
-            val childUpdates = hashMapOf<String, Any>(
-                "$key/$infoKey" to orderValues
-            )
-            dbOrder.updateChildren(childUpdates)
+            dbOrder.child("$key/$infoKey").setValue(orderUser)
 
             cursor.moveToNext()
             i++

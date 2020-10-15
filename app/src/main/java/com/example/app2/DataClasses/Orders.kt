@@ -11,7 +11,11 @@ data class Orders(
     @field:SerializedName("orderPrice")
     val orderPrice: Int? = null,
     @field:SerializedName("orderId")
-    val orderId: String? = null
+    val orderId: String? = null,
+    @field:SerializedName("orderAddress")
+    val orderAddress: String? = "",
+    @field:SerializedName("orderPhone")
+    val orderPhone: String? = ""
 ) {
     @Exclude
     fun toMap(): Map<String, Any?> {
@@ -19,7 +23,9 @@ data class Orders(
             "uId" to uId,
             "orderDate" to orderDate,
             "orderPrice" to orderPrice,
-            "orderId" to orderId
+            "orderId" to orderId,
+            "orderAddress" to orderAddress,
+            "orderPhone" to orderPhone
         )
     }
 }

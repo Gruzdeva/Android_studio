@@ -49,7 +49,6 @@ class OrderFragment: Fragment() {
                 }
 
                 val size = dataSnapshot.childrenCount.toInt()
-                Log.e("!?*^", "$dataSnapshot")
                 updateUI(size, myRecycler)
 
             }

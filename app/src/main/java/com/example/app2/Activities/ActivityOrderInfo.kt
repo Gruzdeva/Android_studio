@@ -10,6 +10,8 @@ import com.example.app2.DataClasses.OrderUser
 import com.example.app2.DataClasses.Orders
 import com.example.app2.R
 import com.example.app2.Singletons.OrderSingleton
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -20,14 +22,15 @@ import kotlinx.android.synthetic.main.activity_order_info.*
 
 class ActivityOrderInfo: AppCompatActivity() {
 
+    val db = Firebase.database
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order_info)
 
         val key = intent.getStringExtra("key")
 
-        val db = Firebase.database
-        val dbOrderInfo = db.getReference("Order/order-info/$key")
+        val dbOrderInfo = db.getReference("Orders/order-info/$key")
 
 
         dbOrderInfo.addListenerForSingleValueEvent(object : ValueEventListener {
@@ -44,7 +47,6 @@ class ActivityOrderInfo: AppCompatActivity() {
                 }
 
                 val size = dataSnapshot.childrenCount.toInt()
-                Log.e("!?*^", "$dataSnapshot")
                 updateUI(size, orderInfoArray)
 
             }

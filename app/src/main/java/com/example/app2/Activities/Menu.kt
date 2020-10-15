@@ -225,7 +225,7 @@ class Menu : AppCompatActivity() {
                     else -> {
                         loadInBD(
                             metPhone.text.toString(),
-                            metAddress.toString(),
+                            metAddress.text.toString(),
                             cost,
                             tableUserOrder
                         )
@@ -234,7 +234,7 @@ class Menu : AppCompatActivity() {
             } else {
                 loadInBD(
                     metPhone.text.toString(),
-                    metAddress.toString(),
+                    metAddress.text.toString(),
                     cost,
                     tableUserOrder
                 )
@@ -274,11 +274,9 @@ class Menu : AppCompatActivity() {
         toast.setGravity(Gravity.TOP, 0, 0)
         toast.show()
 
-
-
         val key = dbOrders.push().key
         val date = format.format(Date())
-        val order = Orders(userId, date, cost, key)
+        val order = Orders(userId, date, cost, key, address, phone)
 
         val orderValues = order.toMap()
 

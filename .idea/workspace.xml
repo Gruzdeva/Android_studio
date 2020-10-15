@@ -14,30 +14,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="059740d7-83fc-4d5a-9bfb-740960e1617b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivityOrderInfo.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Adapters/AdapterOrderInfo.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DataClasses/MenuData.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_order_info.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/recycler_order_info_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivityOrderInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivityOrderInfo.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/Menu.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/Menu.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Adapters/AdapterOrderRecycler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Adapters/AdapterOrderRecycler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Adapters/AdapterRecycler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Adapters/AdapterRecycler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DataClasses/OrderUser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DataClasses/OrderUser.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DataClasses/Orders.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DataClasses/Orders.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Fragments/OrderFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Fragments/OrderFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Fragments/PagerFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Fragments/PagerFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Singletons/MenuSingleton.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Singletons/OrderSingleton.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Singletons/OrderSingleton.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Tables/TableUserOrder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Tables/TableUserOrder.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/recycler_order_info_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/recycler_order_info_item.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602338515242</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="upd: fix bug with menu, new bug in order info">
+      <created>1602698949630</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1602698949630</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -310,7 +301,8 @@
     <MESSAGE value="upd: new points" />
     <MESSAGE value="upd: start work with order dialog" />
     <MESSAGE value="upd: menu on firebase, start order info, bug with menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="upd: menu on firebase, start order info, bug with menu" />
+    <MESSAGE value="upd: fix bug with menu, new bug in order info" />
+    <option name="LAST_COMMIT_MESSAGE" value="upd: fix bug with menu, new bug in order info" />
   </component>
   <component name="WindowStateProjectService">
     <state x="477" y="272" key="#PSD" timestamp="1596108095408">
@@ -353,10 +345,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="794" y="353" key="AndroidCreateXmlResourceDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1602694442104" />
-    <state x="613" y="134" key="CommitChangelistDialog2" timestamp="1602338513092">
+    <state x="613" y="134" key="CommitChangelistDialog2" timestamp="1602698947374">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="613" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1602338513092" />
+    <state x="613" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1602698947374" />
     <state x="740" y="281" key="FileChooserDialogImpl" timestamp="1602162788422">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -381,10 +373,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="461" y="182" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1602162318399" />
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1602338538489">
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1602698970372">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1602338538489" />
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1602698970372" />
     <state x="100" y="100" width="1720" height="880" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1596103710522">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
