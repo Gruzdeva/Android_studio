@@ -12,23 +12,41 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="059740d7-83fc-4d5a-9bfb-740960e1617b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivityOrderInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/ActivityOrderInfo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/Menu.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Activities/Menu.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Adapters/AdapterOrderRecycler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Adapters/AdapterOrderRecycler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DataClasses/Orders.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/DataClasses/Orders.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Fragments/OrderFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Fragments/OrderFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Tables/TableUserOrder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/app2/Tables/TableUserOrder.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/recycler_order_info_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/recycler_order_info_item.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[XPH0220609003820]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -251,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602698949630</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="final version">
+      <created>1602760902731</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1602760902731</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -259,7 +284,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -302,7 +339,8 @@
     <MESSAGE value="upd: start work with order dialog" />
     <MESSAGE value="upd: menu on firebase, start order info, bug with menu" />
     <MESSAGE value="upd: fix bug with menu, new bug in order info" />
-    <option name="LAST_COMMIT_MESSAGE" value="upd: fix bug with menu, new bug in order info" />
+    <MESSAGE value="final version" />
+    <option name="LAST_COMMIT_MESSAGE" value="final version" />
   </component>
   <component name="WindowStateProjectService">
     <state x="477" y="272" key="#PSD" timestamp="1596108095408">
@@ -345,38 +383,38 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="794" y="353" key="AndroidCreateXmlResourceDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1602694442104" />
-    <state x="613" y="134" key="CommitChangelistDialog2" timestamp="1602698947374">
+    <state x="613" y="134" key="CommitChangelistDialog2" timestamp="1602760899514">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="613" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1602698947374" />
+    <state x="613" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1602760899514" />
     <state x="740" y="281" key="FileChooserDialogImpl" timestamp="1602162788422">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="281" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1602162788422" />
-    <state width="1877" height="231" key="GridCell.Tab.0.bottom" timestamp="1602696932228">
+    <state width="1877" height="228" key="GridCell.Tab.0.bottom" timestamp="1602761010709">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="231" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1602696932228" />
-    <state width="1877" height="231" key="GridCell.Tab.0.center" timestamp="1602696932228">
+    <state width="1877" height="228" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1602761010709" />
+    <state width="1877" height="228" key="GridCell.Tab.0.center" timestamp="1602761010709">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="231" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1602696932228" />
-    <state width="1877" height="231" key="GridCell.Tab.0.left" timestamp="1602696932227">
+    <state width="1877" height="228" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1602761010709" />
+    <state width="1877" height="228" key="GridCell.Tab.0.left" timestamp="1602761010709">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="231" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1602696932227" />
-    <state width="1877" height="231" key="GridCell.Tab.0.right" timestamp="1602696932228">
+    <state width="1877" height="228" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1602761010709" />
+    <state width="1877" height="228" key="GridCell.Tab.0.right" timestamp="1602761010709">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="231" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1602696932228" />
+    <state width="1877" height="228" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1602761010709" />
     <state x="461" y="182" key="SettingsEditor" timestamp="1602162318399">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="461" y="182" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1602162318399" />
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1602698970372">
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1602760912163">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1602698970372" />
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1602760912163" />
     <state x="100" y="100" width="1720" height="880" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1596103710522">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
