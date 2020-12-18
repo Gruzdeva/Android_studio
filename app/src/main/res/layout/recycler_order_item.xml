@@ -1,33 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/recycler_2"
-    android:orientation="vertical">
+    android:layout_height="170dp"
+    android:background="@drawable/recycler_2">
 
-<!--Может стоит добавить символическую картинку, для красочности-->
+    <!--Может стоит добавить символическую картинку, для красочности-->
 
     <TextView
         android:id="@+id/date_order"
-        android:layout_width="248dp"
-        android:layout_height="60dp"
+        android:layout_width="80dp"
+        android:layout_height="87dp"
         android:layout_marginLeft="27dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:text="date"
         android:textColor="@color/text_sum"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/cost_order"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="190dp"
-        android:layout_marginTop="5dp"
+        android:layout_width="118dp"
+        android:layout_height="64dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="60dp"
         android:text="cost"
         android:textColor="@color/text_sum"
-        android:textSize="50dp"
+        android:textSize="30dp"
         android:textStyle="bold" />
 
 </LinearLayout>

@@ -12,6 +12,6 @@
     <string name="no">Нет</string>
     <string name="phone">Номер телефона</string>
     <string name="address">Адрес</string>
-    <string name="name">Название</string>
+    <string name="name">Название:</string>
     <string name="price">Цена:</string>
 </resources>

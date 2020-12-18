@@ -16,5 +16,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/derevo_2"
         tools:listitem="@layout/recycler_order_info_item"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
