@@ -61,21 +61,6 @@
 
 
     <TextView
-        android:id="@+id/forgot_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:onClick="forgot_password"
-        android:text="Don't Remember Password?"
-        android:textColor="@color/login_from_details2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.64" />
-
-    <TextView
         android:id="@+id/registration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -84,13 +69,14 @@
         android:textColor="@color/login_from_details2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.911" />
+        app:layout_constraintVertical_bias="0.782" />
 
     <View
         android:id="@+id/Line1"
-        android:layout_width="120dp"
+        android:layout_width="110dp"
         android:layout_height="1dp"
         android:background="@color/login_form_details_medium"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -100,23 +86,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.773" />
 
-    <TextView
-        android:id="@+id/or"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="or"
-        android:textColor="@color/login_from_details2"
-        android:textSize="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.78" />
-
     <View
         android:id="@+id/Line2"
-        android:layout_width="120dp"
+        android:layout_width="110dp"
         android:layout_height="1dp"
         android:background="@color/login_form_details_medium"
         app:layout_constraintBottom_toBottomOf="parent"
