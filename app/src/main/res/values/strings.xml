@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Sun</string>
+    <string name="title_activity_menu">Menu</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="order_switch_text">Заказать в ресторан?</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="phone">Номер телефона</string>
+    <string name="address">Адрес</string>
+    <string name="name">Название:</string>
+    <string name="price">Цена:</string>
+</resources>

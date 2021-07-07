@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#B39F7852</color>
+    <color name="colorPrimaryDark">#FFDAB9</color>
+    <color name="colorAccent">#A4881EB5</color>
+    <color name="dark_blue">#E65464</color>
+    <color name="purple">#ffe75e</color>
+
+    <color name="login_from_details">#53830923</color>
+    <color name="login_from_details2">#9C1F1F</color>
+    <color name="login_from_details_light">#E1C64C</color>
+    <color name="login_form_details_medium">#ACB60F33</color>
+
+    <color name="bg_account_start">#64C568</color>
+    <color name="bg_account_center">#f6f578</color>
+    <color name="bg_account_end">#F4D129</color>
+    <color name="bg_btn">#55D36445</color>
+
+    <color name="forgot_password">#B86F34</color>
+    <color name="input_text">#8C3030</color>
+    <color name="forgot_btn">#D8CB06</color>
+
+    <color name="btn_forg">#873DB9F3</color>
+    <color name="btn_forg2">#784FF17D</color>
+
+    <color name="text_food">#FFFFFF</color>
+    <color name="account">#050303</color>
+    <color name="btn_food">#93792B</color>
+    <color name="btn_account">#BBFFFF8F</color>
+    <color name="recycler">#C8C851</color>
+    <color name="btn_food_press">#7693792B</color>
+    <color name="btn_remove">#A8925E</color>
+    <color name="btn_remove_press">#D0917D4C</color>
+    <color name="text_sum">#9EFFFFFF</color>
+    <color name="title">#E6FFFFFF</color>
+
+
+
+</resources>

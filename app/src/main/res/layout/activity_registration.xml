@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dont_account">
+
+    <EditText
+        android:id="@+id/password_reg"
+        android:layout_width="221dp"
+        android:layout_height="40dp"
+        android:background="@drawable/et_bg"
+        android:hint="Пароль"
+        android:inputType="textPassword"
+        android:padding="6dp"
+        android:textColor="@color/input_text"
+        android:textColorHint="@color/login_from_details"
+        android:textSize="15dp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.231" />
+
+    <EditText
+        android:id="@+id/name_reg"
+        android:layout_width="221dp"
+        android:layout_height="40dp"
+        android:background="@drawable/et_bg"
+        android:hint="Имя"
+        android:inputType="text"
+        android:padding="6dp"
+        android:textColor="@color/input_text"
+        android:textColorHint="@color/login_from_details"
+        android:textSize="15dp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.426" />
+
+    <EditText
+        android:id="@+id/password2_reg"
+        android:layout_width="221dp"
+        android:layout_height="40dp"
+        android:background="@drawable/et_bg"
+        android:hint="Повторите пароль"
+        android:inputType="textPassword"
+        android:padding="6dp"
+        android:textColor="@color/input_text"
+        android:textColorHint="@color/login_from_details"
+        android:textSize="15dp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.324" />
+
+    <Button
+        android:layout_width="221dp"
+        android:layout_height="42dp"
+        android:background="@drawable/btn_bg_press"
+        android:onClick="createAccount"
+        android:text="Создать аккаунт"
+        android:textColor="@color/login_form_details_medium"
+        android:textColorHint="@color/login_from_details"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.606" />
+
+    <EditText
+        android:id="@+id/login_reg"
+        android:layout_width="221dp"
+        android:layout_height="40dp"
+        android:background="@drawable/et_bg"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:padding="6dp"
+        android:textSize="15dp"
+        android:textColor="@color/input_text"
+        android:textColorHint="@color/login_from_details"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.133" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

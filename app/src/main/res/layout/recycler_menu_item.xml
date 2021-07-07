@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/food2">
+
+    <ImageView
+        android:id="@+id/picture_recycler"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/krevetki" />
+
+    <TextView
+        android:id="@+id/name_recycler"
+        android:layout_width="wrap_content"
+        android:layout_height="59dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="240dp"
+        android:text="name of food"
+        android:textColor="@color/text_food"
+        android:textSize="23dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/price_recycler"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="173dp"
+        android:layout_marginLeft="310dp"
+        android:layout_marginTop="175dp"
+        android:layout_marginEnd="102dp"
+        android:text="Price"
+        android:textColor="@color/text_food"
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/add_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/price_recycler"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="-7dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/bg_account_press"
+        android:text="ADD"
+        android:textColor="@color/text_food" />
+
+    <TextView
+        android:id="@+id/description_menu"
+        android:layout_width="287dp"
+        android:layout_height="59dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="83dp"
+        android:layout_marginEnd="7dp"
+        android:text="description"
+        android:textColor="@color/text_food"
+        android:textSize="16dp" />
+
+    <!-- Возможно добавится еще одно текстовое поле-->
+</RelativeLayout>

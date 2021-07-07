@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/fragment_cart"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.OrderFragment"
+    android:background="@drawable/pay">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/myCartRecycler"
+        android:layout_width="411dp"
+        android:layout_height="662dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.115"
+        tools:listitem="@layout/recycler_cart_item" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/table">
+
+        <TextView
+            android:id="@+id/cart_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="33dp"
+            android:text="COST:"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/account"/>
+
+        <Button
+            android:id="@+id/pay"
+            android:layout_width="97dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/remove_press"
+            android:onClick="pay_for_order"
+            android:text="PAY"
+            android:textSize="20dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Списать баллы"
+            android:onClick="deduct_points"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
